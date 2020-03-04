@@ -9,6 +9,7 @@
   "author": "Vladislav Kroshkin",
   "license": "ISC",
   "dependencies": {
-    "autoprefixer": "^9.7.4"
+    "autoprefixer": "^9.7.4",
+    "sass": "^1.26.2"
   }
 }
