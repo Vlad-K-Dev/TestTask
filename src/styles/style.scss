@@ -1,17 +1,45 @@
 $font: Arial, Regular;
-
+$head_element_width: 18.75rem;
 
   @media (max-width: 599px) { 
     .wrapper{
       display: flex;
+      flex-direction: column;
   
     }
-
-    .header{
+    head{
+      font-family: $font;
       height: 40.9375rem;
       width: 100%;
-      background-image: url("../images/header_bg.png");
+      background: url("../images/header_bg.png");
+      display: flex;
+        h1{
+          width: $head_element_width;
+        }
+
+        p{
+          width: $head_element_width;
+        }
+
+        form{
+          width: $head_element_width;
+          height:21.25rem;
+
+            fieldset{
+              border:none
+            }
+        }
     }
+    
+    
+   
+
+    
+
+
+
+
+
   }
 
 
