@@ -1,4 +1,6 @@
 $font: Arial, Regular;
+$text_color: #4287ba;
+$form_inputs: #eeeeee;
 $head_element_width: 18.75rem;
 
   @media (max-width: 599px) { 
@@ -7,52 +9,75 @@ $head_element_width: 18.75rem;
       flex-direction: column;
   
     }
-    head{
+    header{
       font-family: $font;
       height: 40.9375rem;
       width: 100%;
-      background: url("../images/header_bg.png");
+      background-image: url("images/header_bg.jpg");
       display: flex;
-        h1{
+      flex-flow: column;
+    }  
+        .head__title{
+          width: $head_element_width;
+          
+        }
+
+        .head__text{
           width: $head_element_width;
         }
 
-        p{
-          width: $head_element_width;
+        .wrapper__form{
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
         }
 
         form{
           width: $head_element_width;
           height:21.25rem;
+          border-radius: .1rem;
+          box-shadow: 0px 0px 8px 0px grey;
 
             fieldset{
               border:none
             }
+
+            legend{
+              color: $text_color;
+              font-size: 1.5rem;
+            }
+
+            input[name="name"],input[name="email"], select[name="select_country"]{
+              width: 17.5rem;
+              height: 3rem;
+              border: none;
+              background-color: $form_inputs;
+            }
+
+            input[name="submit_btn"]{
+              width: 7.8125rem;
+              height: 1.875rem;
+              font-size: 1.2rem;
+              border: none;
+              border-radius: .1rem;
+              color: #fff;
+              background-color: #3f7dab;
+            }
         }
     }
-    
-    
-   
-
-    
+  
 
 
+  // @media (min-width: 600px) {  }
 
 
-
-  }
-
-
-  @media (min-width: 600px) {  }
+  // @media (min-width: 900px) {  }
 
 
-  @media (min-width: 900px) {  }
+  // @media (min-width: 1200px) {  }
 
 
-  @media (min-width: 1200px) {  }
-
-
-  @media (min-width: 1800px) {  }
+  // @media (min-width: 1800px) {  }
 
 
 
