@@ -3,65 +3,75 @@
 <head>
     <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" href="styles/normolize.css">
-    <link rel="stylesheet" href="build/styles/index.css">
+    <link rel="stylesheet" href="styles/index.css">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
 <div class="wrapper">
     <header class="head">
-        <h1 class="head__title" id="js-head_title">banner head</h1>
+        <h1 class="head__title" id="js-head_title">Banner head</h1>
         <p class="head__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi similique necessitatibus fugit deleniti laboriosam aliquid consectetur temporibus? Similique nisi eaque ab repellendus, pariatur tempore excepturi earum.</p>
         <div class="wrapper__form">
             <form action="" class="form">
                 <fieldset>
-                    <legend>request form</legend>
-                    <input type="text" name="email" value="">
-                    <input type="text" name="name"  value="" >
-                    <select name="select_country" id="" >Select you country
+                    <h2 class="form__title">Request form</h2>
+
+                    <input type="text" id="email" name="email" value="">
+                    <label for="email">Enter you E-Mail</label>
+
+                    <input type="text" id="name" name="name" value="">
+                    <label for="name">Enter you name</label>
+
+                    <select name="select_country" id="" >
+                        <option value=""  name="select_cnt" disabled selected >Select you country</option>
                         <option value="USA">USA</option>
                         <option value="Germani">Germani</option>
                         <option value="England">England</option>
                         <option value="Russia">Russia</option>
                     </select>
-                    <input type="checkbox" name="agree" value="true"> i agree with terms & conditions
-                    <input type="submit" value="submit" name="submit_btn">
-                    <span class="formHyperLink">hyper link</span>
+                    <input type="checkbox" id="checkbox" name="agree" value="true">
+                    <label for="checkbox">i agree with Terms & Conditions</label>
+                    <div class="form_bottomBtn">
+                        <input type="submit" value="submit" name="submit_btn">
+                        <span class="formHyperLink">hyperlink</span>
+                    </div>
                 </fieldset>
             </form>
         </div>
     </header>
     <main>
         <section class="cards">
-            <div class="card">
-                <h2 class="card__title">post header 1</h2>
+            <div class="card-1">
+                <h2 class="card__title">Post header 1</h2>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, optio impedit, quia sit vitae voluptatibus libero odit beatae, quidem fugit deleniti quam voluptatem eveniet eius saepe exercitationem! Non saepe eius pariatur consequuntur perspiciatis impedit iste quaerat.</p>
             </div>
-            <div class="card">
-                <h2 class="card__title">post header 2</h2>
+            <div class="card-2">
+                <h2 class="card__title">Post header 2</h2>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, optio impedit, quia sit vitae voluptatibus libero odit beatae, quidem fugit deleniti quam voluptatem eveniet eius saepe exercitationem! Non saepe eius pariatur consequuntur perspiciatis impedit iste quaerat.</p>
             </div>
-            <div class="card">
-                <h2 class="card__title">post header 3</h2>
+            <div class="card-3">
+                <h2 class="card__title">Post header 3</h2>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, optio impedit, quia sit vitae voluptatibus libero odit beatae, quidem fugit deleniti quam voluptatem eveniet eius saepe exercitationem! Non saepe eius pariatur consequuntur perspiciatis impedit iste quaerat.</p>
             </div>
-            <div class="card">
-                <h2 class="card__title">post header 4</h2>
+            <div class="card-4">
+                <h2 class="card__title">Post header 4</h2>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, optio impedit, quia sit vitae voluptatibus libero odit beatae, quidem fugit deleniti quam voluptatem eveniet eius saepe exercitationem! Non saepe eius pariatur consequuntur perspiciatis impedit iste quaerat.</p>
             </div>
-            <div class="card">
-                <h2 class="card__title">post header 5</h2>
+            <div class="card-5">
+                <h2 class="card__title">Post header 5</h2>
                 <p class="card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, optio impedit, quia sit vitae voluptatibus libero odit beatae, quidem fugit deleniti quam voluptatem eveniet eius saepe exercitationem! Non saepe eius pariatur consequuntur perspiciatis impedit iste quaerat.</p>
             </div>
         </section>
         <section class="promo-block">
+            <h2 class="promo-block__title">Title-text</h2>
             <ol class="promo-block__menu">
-                <li class="promo-block__list">Lorem ipsum dolor sit.</li>
-                <li class="promo-block__list">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione.</li>
-                <li class="promo-block__list">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
-                <li class="promo-block__list">Lorem ipsum dolor sit amet.</li>
-                <li class="promo-block__list">Lorem ipsum dolor sit amet consectetur adipisicing.</li>
-                <li class="promo-block__list">Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+                <li class="promo-block__list">Duis aute irure dolor in <br><br>reprehenderit<sup>1</sup> in voluptate velit </li>
+                <li class="promo-block__list">Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li class="promo-block__list">Ut enim ad minim veniam, quis nostrud exercitation</li>
+                <li class="promo-block__list">Et dolore magna aliqua.</li>
+                <li class="promo-block__list">Sed do eiusmod tempor<sup>2</sup> incididunt ut labore</li>
+                <li class="promo-block__list">Lorem ipsum dolor sit amet<sup>3</sup> , consectetur adipisicing elit.</li>
             </ol>
         </section>
     </main>
