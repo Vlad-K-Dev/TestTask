@@ -196,45 +196,81 @@ $head_element_width: 18.75rem;
 
 
     //_______________Promo block styles___________//
-
         .promo-block{
+          display: flex;
+          flex-direction: column;
           background: $form_inputs;
+          margin: 2.0625rem 0 0 0;
         }
 
         .promo-block__title{
-            font-size: 3rem;
-            color: #4488bb;
-            text-align: center;
+          margin: 2.0625rem 0 0 0 ;
+          font-size: 3rem;
+          color: #4488bb;
+          text-align: center;
+        }
+
+
+        ol{
+          counter-reset: counter;
+          padding: 0;
+          position: relative;
+          align-self: center;
+        }
+
+
+        .promo-block__list:nth-last-child(-n + 5){
+          padding-top: 1rem;
+          border-top: 1px dotted #aaaaaa;
+        }
+
+          .promo-block__list{
+            position: relative;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            margin: 16px 0 0  3.75rem;;
+            color: $text_color;
+            width: 14.375rem;
+            list-style: none;
+            font-size: 1.125rem;
+            font-weight: 600;
+          }
+
+        .promo-block__list:before {
+          content:counter(counter);
+          counter-increment: counter;
+          position: absolute;
+          left: -4.5rem;
+          color: $form_inputs;
+          font-weight: 600;
+          background: #2980B9;
+          display: inline-block;
+          text-align: center;
+          margin: 0 10px;
+          line-height:1.875rem;
+          width: 1.875rem;
+          height: 1.875rem;
+          border-radius: 50%;
 
         }
 
-        .promo-block > ol > li {
-          margin: 16px 0 0 0;
-          align-items: stretch;
-          width: 14.375rem;
-          list-style: none;
+    //____________________End promo styles_________________
+
+    //____________________Disclamer block__________________
+
+        article{
+          display: flex;
+          flex-direction: column;
+          margin:  auto;
+          width: 18.75rem;
+
         }
-    ol{
-      counter-reset: myCounter;
-      padding: 0;
-    }
 
-    li:before {
-      counter-increment: myCounter;
-      content:counter(myCounter);
-      color: white;
-      background: #2980B9;
-      display: inline-block;
-      text-align: center;
-      margin: 5px 10px;
-      //line-height: 40px;
-      width: 1.875rem;
-      height: 1.875rem;
-      border-radius: 50%;
-      vertical-align: baseline;
-    }
-
-
+        .disclamers{
+          margin: 1.25rem 0;
+          border-left: 2.5px solid #4488bb;
+        }
 
     }
   
