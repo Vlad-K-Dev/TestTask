@@ -1,3 +1,18 @@
+.form::before {
+  content: "Enter correct E-Mail";
+  position: absolute;
+  width: 10.5rem;
+  height: 2.1875rem;
+  background: #bb4444;
+  border-radius: .2rem;
+  color: #eee;
+  font-size: 16px;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center; }
+
 @media (max-width: 599px) {
   .wrapper {
     display: flex;
@@ -53,7 +68,13 @@
     form .form__title {
       color: #4287ba;
       font-size: 1.5rem;
-      margin: 1rem  0 1rem 0.3125rem; }
+      margin: 1rem  0 1rem 0; }
+    form .input-field {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 16px; }
     form input[name="name"], form input[name="email"], form select[name="select_country"] {
       outline: none;
       width: 17.5rem;
@@ -61,18 +82,24 @@
       border: 1px solid #4287ba;
       border-radius: .2rem;
       background-color: #eeeeee;
-      margin-bottom: 16px;
-      position: relative; }
+      position: relative;
+      transition: 0.2s; }
     form label[for="email"], form label[for="name"] {
       display: block;
       position: absolute;
-      font-size: 0.5rem;
-      left: 1.5rem;
-      top: 4.5rem;
+      font-size: 1rem;
+      transition: .2s;
       color: #aaa; }
-    form label[for="name"] {
-      left: 1.5rem;
-      top: 8.6rem; }
+    form input[name="email"]:focus ~ label[for="email"],
+    form input[name="name"]:focus ~ label[for="name"] {
+      position: absolute;
+      top: 5px;
+      left: 8px;
+      display: block;
+      transition: 0.2s;
+      font-size: .5rem;
+      color: #aaa;
+      font-weight: 700; }
     form option[name="select_cnt"] {
       color: #aaa; }
     form input[type="checkbox"] {
@@ -91,6 +118,14 @@
       color: #aaa;
       text-align: center;
       padding: 0 0 0 .5rem; }
+    form input[type=checkbox]::after {
+      content: "";
+      position: absolute;
+      font-size: 16px; }
+    form input[type=checkbox]:checked + label[for="checkbox"]::before {
+      position: absolute;
+      content: url("../images/checked.png");
+      left: .8rem; }
     form .form_bottomBtn {
       width: 17.5rem;
       display: flex;
@@ -128,6 +163,12 @@
     background-repeat: no-repeat;
     background-size: cover; }
 
+  .card_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(64, 115, 156, 0.5); }
+
   .card__title {
     font-size: 1.5rem;
     margin: 0.8125rem 0 0 1.5rem;
@@ -146,6 +187,12 @@
     background-blend-mode: screen, difference, lighten;
     background-repeat: no-repeat;
     background-size: cover; }
+
+  .card_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(64, 115, 156, 0.5); }
 
   .card__title {
     font-size: 1.5rem;
@@ -166,6 +213,12 @@
     background-repeat: no-repeat;
     background-size: cover; }
 
+  .card_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(64, 115, 156, 0.5); }
+
   .card__title {
     font-size: 1.5rem;
     margin: 0.8125rem 0 0 1.5rem;
@@ -184,6 +237,12 @@
     background-blend-mode: screen, difference, lighten;
     background-repeat: no-repeat;
     background-size: cover; }
+
+  .card_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(64, 115, 156, 0.5); }
 
   .card__title {
     font-size: 1.5rem;
@@ -204,6 +263,12 @@
     background-repeat: no-repeat;
     background-size: cover; }
 
+  .card_wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(64, 115, 156, 0.5); }
+
   .card__title {
     font-size: 1.5rem;
     margin: 0.8125rem 0 0 1.5rem;
@@ -219,6 +284,9 @@
     flex-direction: column;
     background: #eeeeee;
     margin: 2.0625rem 0 0 0; }
+
+  .promo-block__mac {
+    display: none; }
 
   .promo-block__title {
     margin: 2.0625rem 0 0 0;
@@ -252,7 +320,7 @@
     content: counter(counter);
     counter-increment: counter;
     position: absolute;
-    left: -4.5rem;
+    left: -3.5rem;
     color: #eeeeee;
     font-weight: 600;
     background: #2980B9;
@@ -339,7 +407,13 @@
       .head form .form__title {
         color: #4287ba;
         font-size: 1.5rem;
-        margin: 1rem  0 1rem 0.3125rem; }
+        margin: 1rem  0 1rem 0; }
+      .head form .input-field {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 16px; }
       .head form input[name="name"], .head form input[name="email"], .head form select[name="select_country"] {
         outline: none;
         width: 17.5rem;
@@ -347,18 +421,24 @@
         border: 1px solid #4287ba;
         border-radius: .2rem;
         background-color: #eeeeee;
-        margin-bottom: 16px;
-        position: relative; }
+        position: relative;
+        transition: 0.2s; }
       .head form label[for="email"], .head form label[for="name"] {
         display: block;
         position: absolute;
-        font-size: 0.5rem;
-        left: 1.5rem;
-        top: 4.5rem;
+        font-size: 1rem;
+        transition: .2s;
         color: #aaa; }
-      .head form label[for="name"] {
-        left: 1.5rem;
-        top: 8.6rem; }
+      .head form input[name="email"]:focus ~ label[for="email"],
+      .head form input[name="name"]:focus ~ label[for="name"] {
+        position: absolute;
+        top: 5px;
+        left: 8px;
+        display: block;
+        transition: 0.2s;
+        font-size: .5rem;
+        color: #aaa;
+        font-weight: 700; }
       .head form option[name="select_cnt"] {
         color: #aaa; }
       .head form input[type="checkbox"] {
@@ -377,6 +457,14 @@
         color: #aaa;
         text-align: center;
         padding: 0 0 0 .5rem; }
+      .head form input[type=checkbox]::after {
+        content: "";
+        position: absolute;
+        font-size: 16px; }
+      .head form input[type=checkbox]:checked + label[for="checkbox"]::before {
+        position: absolute;
+        content: url("../images/checked.png");
+        left: .8rem; }
       .head form .form_bottomBtn {
         width: 17.5rem;
         display: flex;
@@ -706,5 +794,51 @@ article {
   margin: 1.25rem 0;
   border-left: 2.5px solid #4488bb;
   color: #4488bb; }
+
+.modal-window {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  width: 36.875rem;
+  background: #fff;
+  top: 20px;
+  right: 20px;
+  z-index: 6; }
+
+.modal-window__cloce {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer; }
+
+.modal-window__head {
+  margin: 28px 0 30px 20px; }
+
+.modal-window__text {
+  margin: 0 20px 0 20px; }
+
+.modal-window__buttonWraper {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-end; }
+
+#cancel {
+  border: none;
+  text-transform: capitalize;
+  background: transparent;
+  color: #aaaaaa; }
+
+#accept {
+  width: 125px;
+  height: 30px;
+  font-size: 14px;
+  border: none;
+  border-radius: .1rem;
+  color: #fff;
+  margin: 0 20px;
+  background: linear-gradient(to right, #306287, #4386b9);
+  text-transform: capitalize; }
 
 /*# sourceMappingURL=index.css.map */
