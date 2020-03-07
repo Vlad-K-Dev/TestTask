@@ -288,9 +288,20 @@ $head_element_width: 18.75rem;
 
  @media (min-width: 1200px) {
    .wrapper{
+     font-family: $font;
      display: flex;
      flex-flow: row wrap;
    }
+   .head::before{
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(68,136,187, .5);
+     //z-index: -1;
+
+   }
+
    .head{
      position: relative;
      font-family: $font;
@@ -304,8 +315,10 @@ $head_element_width: 18.75rem;
      flex-flow: row wrap;
      justify-content: space-evenly;
 
+
      .head__textWrapper{
        width: 31.25rem;
+       z-index: 2;
      }
      .head__title{
        width: 20.75rem;
@@ -324,7 +337,7 @@ $head_element_width: 18.75rem;
      }
 
      .head__text{
-       margin: 4.25rem 0 2rem 0 ;
+       margin: 3.25rem 0 2rem 0 ;
        font-size: 0.75rem;
        line-height: 1.5;
        color: $color_fish_text;
@@ -347,12 +360,14 @@ $head_element_width: 18.75rem;
        box-shadow: 0 0 8px 0 grey;
        background: #fff;
        @include form_styles;
+       z-index: 2;
      }
    }
 
    //_________________Cards___________________________//
 
     main{
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -363,9 +378,9 @@ $head_element_width: 18.75rem;
            (4,card4_lg),
            (5,card5_lg) {
      .card-#{$index} {
-       margin: 0.625rem;
+       //margin: 0.625rem;
        height: 9.375rem;
-       width: $head_element_width;
+       width: 24.3125rem;
        background-image: url('../images/decstopImages/#{$card_bg}.jpg');
        background-blend-mode: screen, difference, lighten;
        background-repeat: no-repeat;
@@ -377,7 +392,8 @@ $head_element_width: 18.75rem;
      width: 1200px;
      display: flex;
      flex-flow: row wrap;
-     align-items: center;
+     justify-content: space-between;
+     margin-top:4.6875rem ;
      font-family: $font;
    }
 
@@ -387,62 +403,137 @@ $head_element_width: 18.75rem;
            (4),
            (5) {
      .card-#{$index}{
+       display: flex;
+       flex-direction: column;
        position: relative;
-     }
-     .card-#{$index}::before{
-       content: "";
-       background-color: #4488bb;
-       width: $head_element_width;
-       height:  9.375rem;
+       overflow: hidden;
+
      }
 
+     .card-4,.card-5{
+       flex-grow: 1;
+       margin: 1.5625rem 0 0 0 ;
+       width: 35.875rem;
 
-     .card-#{$index} > h2{
+     }
+     .card_wrapper{
        width: 100%;
-       height: 40px;
+       height: 100%;
        position: absolute;
        top: 70%;
-       padding:  0.25rem 0 0  1.5rem;
+       background-color: rgba(64,115,156, .5);
        color: #eee;
      }
 
-     .card-#{$index}>p{
+     .card__title{
+        margin: 0.9375rem 1.125rem;
+     }
+
+     .card__text{
+       margin: 0 0 1.125rem 1.125rem;
        color: #eee;
-       display: none;
-       position: absolute;
-       top: 100%;
-       padding: 0 0 0 1.3125rem;
        font-size: 14px;
      }
 
-     .card-#{$index}:hover >h2{
+     .card-#{$index}:hover .card_wrapper{
        margin: 0;
-       transition: top .2s;
+       transition: top .5s;
        top: 0;
      }
 
-     .card-#{$index}:hover > p{
-       margin: 0;
-       transition: top .4s;
-       visibility: visible;
-       display: block;
-       top: 29%;
-
-     }
-
-     .card-#{$index}:not(:hover) > h2{
-       transition: top 1s;
+     .card-#{$index}:not(:hover) > .card_wrapper{
+       transition: top .5s;
        top: 65%;
      }
+   }
+   //______________________End cards__________________
 
-     .card-#{$index}:not(:hover) > p{
-       transition: top 1s;
-       visibility: hidden;
-       display: block;
-       top: 100%;
-     }
+
+   //______________________Promo-block_________________
+   .promo-block{
+     width: 1200px;
+     display: flex;
+     flex-flow: row wrap;
+     margin: 4.6875rem 0 0 0;
+     background-color: #eee;
+     justify-content: space-evenly;
+     position: relative;;
+   }
+   .promo-block__mac{
+     position: relative;
+     width: 29.6875rem;
+   }
+   .promo-block__Img{
+     width: 30.625rem;
+     position: absolute;
+     top: -2.5rem;
+   }
+   .promo-block__wrapperContent{
+     display: flex;
+     flex-direction: column;
+     align-items: start;
+     text-align: left;
+   }
+   .promo-block__title{
+     margin: 2.0625rem 0 2.625rem 0 ;
+     font-size: 3rem;
+     color: #4488bb;
+     text-align: center;
+   }
+   ol{
+     display: flex;
+     flex-direction: column;
+     counter-reset: counter;
+     padding: 0;
+     margin: 0 0 5.5rem 0;
+     position: relative;
+   }
+   .promo-block__list:nth-last-child(-n + 5){
+     padding-top: 1rem;
+     //border-top: 1px dotted #aaaaaa;
+   }
+   .promo-block__list{
+     position: relative;
+     margin: 0 0 1.3rem 0;
+     color: $text_color;
+     list-style: none;
+     font-size: 1rem;
+     font-weight: 600;
+   }
+   .promo-block__list:before {
+     content:counter(counter);
+     counter-increment: counter;
+     position: absolute;
+     left: -3.5rem;
+     color: $form_inputs;
+     font-weight: 600;
+     background: #2980B9;
+     display: inline-block;
+     text-align: center;
+     margin: 0 10px;
+     line-height:1.875rem;
+     width: 1.875rem;
+     height: 1.875rem;
+     border-radius: 50%;
    }
  }
+
+
+  //________________End promo block______________
+
+article{
+  display: flex;
+  flex-flow: row wrap;
+  margin:  auto;
+  //width: 18.75rem;
+
+}
+
+.disclamers{
+  margin: 1.25rem 0;
+  border-left: 2.5px solid #4488bb;
+  color: #4488bb
+}
 
 
   // @media (min-width: 1800px) {  }

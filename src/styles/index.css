@@ -275,8 +275,16 @@
     border-left: 2.5px solid #4488bb; } }
 @media (min-width: 1200px) {
   .wrapper {
+    font-family: Arial, Regular;
     display: flex;
     flex-flow: row wrap; }
+
+  .head::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(68, 136, 187, 0.5); }
 
   .head {
     position: relative;
@@ -291,7 +299,8 @@
     flex-flow: row wrap;
     justify-content: space-evenly; }
     .head .head__textWrapper {
-      width: 31.25rem; }
+      width: 31.25rem;
+      z-index: 2; }
     .head .head__title {
       width: 20.75rem;
       margin: 1.875rem 0 0 0;
@@ -305,7 +314,7 @@
       height: 0.3125rem;
       background: #fff; }
     .head .head__text {
-      margin: 4.25rem 0 2rem 0;
+      margin: 3.25rem 0 2rem 0;
       font-size: 0.75rem;
       line-height: 1.5;
       color: #fff; }
@@ -322,7 +331,8 @@
       margin: 1.875rem 0;
       border-radius: .1rem;
       box-shadow: 0 0 8px 0 grey;
-      background: #fff; }
+      background: #fff;
+      z-index: 2; }
       .head form fieldset {
         border: none;
         position: relative; }
@@ -390,50 +400,46 @@
           text-align: center; }
 
   main {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center; }
 
   .card-1 {
-    margin: 0.625rem;
     height: 9.375rem;
-    width: 18.75rem;
+    width: 24.3125rem;
     background-image: url("../images/decstopImages/card1_lg.jpg");
     background-blend-mode: screen, difference, lighten;
     background-repeat: no-repeat;
     background-size: cover; }
 
   .card-2 {
-    margin: 0.625rem;
     height: 9.375rem;
-    width: 18.75rem;
+    width: 24.3125rem;
     background-image: url("../images/decstopImages/card2_lg.jpg");
     background-blend-mode: screen, difference, lighten;
     background-repeat: no-repeat;
     background-size: cover; }
 
   .card-3 {
-    margin: 0.625rem;
     height: 9.375rem;
-    width: 18.75rem;
+    width: 24.3125rem;
     background-image: url("../images/decstopImages/card3_lg.jpg");
     background-blend-mode: screen, difference, lighten;
     background-repeat: no-repeat;
     background-size: cover; }
 
   .card-4 {
-    margin: 0.625rem;
     height: 9.375rem;
-    width: 18.75rem;
+    width: 24.3125rem;
     background-image: url("../images/decstopImages/card4_lg.jpg");
     background-blend-mode: screen, difference, lighten;
     background-repeat: no-repeat;
     background-size: cover; }
 
   .card-5 {
-    margin: 0.625rem;
     height: 9.375rem;
-    width: 18.75rem;
+    width: 24.3125rem;
     background-image: url("../images/decstopImages/card5_lg.jpg");
     background-blend-mode: screen, difference, lighten;
     background-repeat: no-repeat;
@@ -443,242 +449,262 @@
     width: 1200px;
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    justify-content: space-between;
+    margin-top: 4.6875rem;
     font-family: Arial, Regular; }
 
   .card-1 {
-    position: relative; }
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; }
 
-  .card-1::before {
-    content: "";
-    background-color: #4488bb;
-    width: 18.75rem;
-    height: 9.375rem; }
+  .card-4, .card-5 {
+    flex-grow: 1;
+    margin: 1.5625rem 0 0 0;
+    width: 35.875rem; }
 
-  .card-1 > h2 {
+  .card_wrapper {
     width: 100%;
-    height: 40px;
+    height: 100%;
     position: absolute;
     top: 70%;
-    padding: 0.25rem 0 0  1.5rem;
+    background-color: rgba(64, 115, 156, 0.5);
     color: #eee; }
 
-  .card-1 > p {
+  .card__title {
+    margin: 0.9375rem 1.125rem; }
+
+  .card__text {
+    margin: 0 0 1.125rem 1.125rem;
     color: #eee;
-    display: none;
-    position: absolute;
-    top: 100%;
-    padding: 0 0 0 1.3125rem;
     font-size: 14px; }
 
-  .card-1:hover > h2 {
+  .card-1:hover .card_wrapper {
     margin: 0;
-    transition: top .2s;
+    transition: top .5s;
     top: 0; }
 
-  .card-1:hover > p {
-    margin: 0;
-    transition: top .4s;
-    visibility: visible;
-    display: block;
-    top: 29%; }
-
-  .card-1:not(:hover) > h2 {
-    transition: top 1s;
+  .card-1:not(:hover) > .card_wrapper {
+    transition: top .5s;
     top: 65%; }
-
-  .card-1:not(:hover) > p {
-    transition: top 1s;
-    visibility: hidden;
-    display: block;
-    top: 100%; }
 
   .card-2 {
-    position: relative; }
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; }
 
-  .card-2::before {
-    content: "";
-    background-color: #4488bb;
-    width: 18.75rem;
-    height: 9.375rem; }
+  .card-4, .card-5 {
+    flex-grow: 1;
+    margin: 1.5625rem 0 0 0;
+    width: 35.875rem; }
 
-  .card-2 > h2 {
+  .card_wrapper {
     width: 100%;
-    height: 40px;
+    height: 100%;
     position: absolute;
     top: 70%;
-    padding: 0.25rem 0 0  1.5rem;
+    background-color: rgba(64, 115, 156, 0.5);
     color: #eee; }
 
-  .card-2 > p {
+  .card__title {
+    margin: 0.9375rem 1.125rem; }
+
+  .card__text {
+    margin: 0 0 1.125rem 1.125rem;
     color: #eee;
-    display: none;
-    position: absolute;
-    top: 100%;
-    padding: 0 0 0 1.3125rem;
     font-size: 14px; }
 
-  .card-2:hover > h2 {
+  .card-2:hover .card_wrapper {
     margin: 0;
-    transition: top .2s;
+    transition: top .5s;
     top: 0; }
 
-  .card-2:hover > p {
-    margin: 0;
-    transition: top .4s;
-    visibility: visible;
-    display: block;
-    top: 29%; }
-
-  .card-2:not(:hover) > h2 {
-    transition: top 1s;
+  .card-2:not(:hover) > .card_wrapper {
+    transition: top .5s;
     top: 65%; }
-
-  .card-2:not(:hover) > p {
-    transition: top 1s;
-    visibility: hidden;
-    display: block;
-    top: 100%; }
 
   .card-3 {
-    position: relative; }
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; }
 
-  .card-3::before {
-    content: "";
-    background-color: #4488bb;
-    width: 18.75rem;
-    height: 9.375rem; }
+  .card-4, .card-5 {
+    flex-grow: 1;
+    margin: 1.5625rem 0 0 0;
+    width: 35.875rem; }
 
-  .card-3 > h2 {
+  .card_wrapper {
     width: 100%;
-    height: 40px;
+    height: 100%;
     position: absolute;
     top: 70%;
-    padding: 0.25rem 0 0  1.5rem;
+    background-color: rgba(64, 115, 156, 0.5);
     color: #eee; }
 
-  .card-3 > p {
+  .card__title {
+    margin: 0.9375rem 1.125rem; }
+
+  .card__text {
+    margin: 0 0 1.125rem 1.125rem;
     color: #eee;
-    display: none;
-    position: absolute;
-    top: 100%;
-    padding: 0 0 0 1.3125rem;
     font-size: 14px; }
 
-  .card-3:hover > h2 {
+  .card-3:hover .card_wrapper {
     margin: 0;
-    transition: top .2s;
+    transition: top .5s;
     top: 0; }
 
-  .card-3:hover > p {
-    margin: 0;
-    transition: top .4s;
-    visibility: visible;
-    display: block;
-    top: 29%; }
-
-  .card-3:not(:hover) > h2 {
-    transition: top 1s;
+  .card-3:not(:hover) > .card_wrapper {
+    transition: top .5s;
     top: 65%; }
-
-  .card-3:not(:hover) > p {
-    transition: top 1s;
-    visibility: hidden;
-    display: block;
-    top: 100%; }
 
   .card-4 {
-    position: relative; }
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; }
 
-  .card-4::before {
-    content: "";
-    background-color: #4488bb;
-    width: 18.75rem;
-    height: 9.375rem; }
+  .card-4, .card-5 {
+    flex-grow: 1;
+    margin: 1.5625rem 0 0 0;
+    width: 35.875rem; }
 
-  .card-4 > h2 {
+  .card_wrapper {
     width: 100%;
-    height: 40px;
+    height: 100%;
     position: absolute;
     top: 70%;
-    padding: 0.25rem 0 0  1.5rem;
+    background-color: rgba(64, 115, 156, 0.5);
     color: #eee; }
 
-  .card-4 > p {
+  .card__title {
+    margin: 0.9375rem 1.125rem; }
+
+  .card__text {
+    margin: 0 0 1.125rem 1.125rem;
     color: #eee;
-    display: none;
-    position: absolute;
-    top: 100%;
-    padding: 0 0 0 1.3125rem;
     font-size: 14px; }
 
-  .card-4:hover > h2 {
+  .card-4:hover .card_wrapper {
     margin: 0;
-    transition: top .2s;
+    transition: top .5s;
     top: 0; }
 
-  .card-4:hover > p {
-    margin: 0;
-    transition: top .4s;
-    visibility: visible;
-    display: block;
-    top: 29%; }
-
-  .card-4:not(:hover) > h2 {
-    transition: top 1s;
+  .card-4:not(:hover) > .card_wrapper {
+    transition: top .5s;
     top: 65%; }
-
-  .card-4:not(:hover) > p {
-    transition: top 1s;
-    visibility: hidden;
-    display: block;
-    top: 100%; }
 
   .card-5 {
-    position: relative; }
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; }
 
-  .card-5::before {
-    content: "";
-    background-color: #4488bb;
-    width: 18.75rem;
-    height: 9.375rem; }
+  .card-4, .card-5 {
+    flex-grow: 1;
+    margin: 1.5625rem 0 0 0;
+    width: 35.875rem; }
 
-  .card-5 > h2 {
+  .card_wrapper {
     width: 100%;
-    height: 40px;
+    height: 100%;
     position: absolute;
     top: 70%;
-    padding: 0.25rem 0 0  1.5rem;
+    background-color: rgba(64, 115, 156, 0.5);
     color: #eee; }
 
-  .card-5 > p {
+  .card__title {
+    margin: 0.9375rem 1.125rem; }
+
+  .card__text {
+    margin: 0 0 1.125rem 1.125rem;
     color: #eee;
-    display: none;
-    position: absolute;
-    top: 100%;
-    padding: 0 0 0 1.3125rem;
     font-size: 14px; }
 
-  .card-5:hover > h2 {
+  .card-5:hover .card_wrapper {
     margin: 0;
-    transition: top .2s;
+    transition: top .5s;
     top: 0; }
 
-  .card-5:hover > p {
-    margin: 0;
-    transition: top .4s;
-    visibility: visible;
-    display: block;
-    top: 29%; }
-
-  .card-5:not(:hover) > h2 {
-    transition: top 1s;
+  .card-5:not(:hover) > .card_wrapper {
+    transition: top .5s;
     top: 65%; }
 
-  .card-5:not(:hover) > p {
-    transition: top 1s;
-    visibility: hidden;
-    display: block;
-    top: 100%; } }
+  .promo-block {
+    width: 1200px;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 4.6875rem 0 0 0;
+    background-color: #eee;
+    justify-content: space-evenly;
+    position: relative; }
+
+  .promo-block__mac {
+    position: relative;
+    width: 29.6875rem; }
+
+  .promo-block__Img {
+    width: 30.625rem;
+    position: absolute;
+    top: -2.5rem; }
+
+  .promo-block__wrapperContent {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left; }
+
+  .promo-block__title {
+    margin: 2.0625rem 0 2.625rem 0;
+    font-size: 3rem;
+    color: #4488bb;
+    text-align: center; }
+
+  ol {
+    display: flex;
+    flex-direction: column;
+    counter-reset: counter;
+    padding: 0;
+    margin: 0 0 5.5rem 0;
+    position: relative; }
+
+  .promo-block__list:nth-last-child(-n + 5) {
+    padding-top: 1rem; }
+
+  .promo-block__list {
+    position: relative;
+    margin: 0 0 1.3rem 0;
+    color: #4287ba;
+    list-style: none;
+    font-size: 1rem;
+    font-weight: 600; }
+
+  .promo-block__list:before {
+    content: counter(counter);
+    counter-increment: counter;
+    position: absolute;
+    left: -3.5rem;
+    color: #eeeeee;
+    font-weight: 600;
+    background: #2980B9;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px;
+    line-height: 1.875rem;
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 50%; } }
+article {
+  display: flex;
+  flex-flow: row wrap;
+  margin: auto; }
+
+.disclamers {
+  margin: 1.25rem 0;
+  border-left: 2.5px solid #4488bb;
+  color: #4488bb; }
 
 /*# sourceMappingURL=index.css.map */
