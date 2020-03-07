@@ -273,5 +273,412 @@
   .disclamers {
     margin: 1.25rem 0;
     border-left: 2.5px solid #4488bb; } }
+@media (min-width: 1200px) {
+  .wrapper {
+    display: flex;
+    flex-flow: row wrap; }
+
+  .head {
+    position: relative;
+    font-family: Arial, Regular;
+    height: 400px;
+    width: 100%;
+    background-image: url("../images/header_bg_lg.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly; }
+    .head .head__textWrapper {
+      width: 31.25rem; }
+    .head .head__title {
+      width: 20.75rem;
+      margin: 1.875rem 0 0 0;
+      font-size: 2rem;
+      color: #fff; }
+    .head .head__title::before {
+      content: "";
+      position: absolute;
+      top: 5.5rem;
+      width: 18.75rem;
+      height: 0.3125rem;
+      background: #fff; }
+    .head .head__text {
+      margin: 4.25rem 0 2rem 0;
+      font-size: 0.75rem;
+      line-height: 1.5;
+      color: #fff; }
+    .head .wrapper__form {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center; }
+    .head form {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      width: 18.75rem;
+      height: 21.25rem;
+      margin: 1.875rem 0;
+      border-radius: .1rem;
+      box-shadow: 0 0 8px 0 grey;
+      background: #fff; }
+      .head form fieldset {
+        border: none;
+        position: relative; }
+      .head form .form__title {
+        color: #4287ba;
+        font-size: 1.5rem;
+        margin: 1rem  0 1rem 0.3125rem; }
+      .head form input[name="name"], .head form input[name="email"], .head form select[name="select_country"] {
+        outline: none;
+        width: 17.5rem;
+        height: 3rem;
+        border: 1px solid #4287ba;
+        border-radius: .2rem;
+        background-color: #eeeeee;
+        margin-bottom: 16px;
+        position: relative; }
+      .head form label[for="email"], .head form label[for="name"] {
+        display: block;
+        position: absolute;
+        font-size: 0.5rem;
+        left: 1.5rem;
+        top: 4.5rem;
+        color: #aaa; }
+      .head form label[for="name"] {
+        left: 1.5rem;
+        top: 8.6rem; }
+      .head form option[name="select_cnt"] {
+        color: #aaa; }
+      .head form input[type="checkbox"] {
+        position: relative;
+        color: #aaa; }
+      .head form input[type="checkbox"]:before {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        border-radius: .2rem;
+        background: #eeeeee; }
+      .head form label[for="checkbox"] {
+        color: #aaa;
+        text-align: center;
+        padding: 0 0 0 .5rem; }
+      .head form .form_bottomBtn {
+        width: 17.5rem;
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: baseline; }
+        .head form .form_bottomBtn input[name="submit_btn"] {
+          margin-top: 16px;
+          width: 7.8125rem;
+          height: 1.875rem;
+          font-size: 16px;
+          border: none;
+          border-radius: .1rem;
+          color: #fff;
+          background: linear-gradient(to right, #306287, #4386b9);
+          text-transform: capitalize; }
+        .head form .form_bottomBtn .formHyperLink {
+          color: #aaa;
+          text-transform: capitalize;
+          width: 7.8125rem;
+          text-align: center; }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+  .card-1 {
+    margin: 0.625rem;
+    height: 9.375rem;
+    width: 18.75rem;
+    background-image: url("../images/decstopImages/card1_lg.jpg");
+    background-blend-mode: screen, difference, lighten;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+  .card-2 {
+    margin: 0.625rem;
+    height: 9.375rem;
+    width: 18.75rem;
+    background-image: url("../images/decstopImages/card2_lg.jpg");
+    background-blend-mode: screen, difference, lighten;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+  .card-3 {
+    margin: 0.625rem;
+    height: 9.375rem;
+    width: 18.75rem;
+    background-image: url("../images/decstopImages/card3_lg.jpg");
+    background-blend-mode: screen, difference, lighten;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+  .card-4 {
+    margin: 0.625rem;
+    height: 9.375rem;
+    width: 18.75rem;
+    background-image: url("../images/decstopImages/card4_lg.jpg");
+    background-blend-mode: screen, difference, lighten;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+  .card-5 {
+    margin: 0.625rem;
+    height: 9.375rem;
+    width: 18.75rem;
+    background-image: url("../images/decstopImages/card5_lg.jpg");
+    background-blend-mode: screen, difference, lighten;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+  .cards {
+    width: 1200px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    font-family: Arial, Regular; }
+
+  .card-1 {
+    position: relative; }
+
+  .card-1::before {
+    content: "";
+    background-color: #4488bb;
+    width: 18.75rem;
+    height: 9.375rem; }
+
+  .card-1 > h2 {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 70%;
+    padding: 0.25rem 0 0  1.5rem;
+    color: #eee; }
+
+  .card-1 > p {
+    color: #eee;
+    display: none;
+    position: absolute;
+    top: 100%;
+    padding: 0 0 0 1.3125rem;
+    font-size: 14px; }
+
+  .card-1:hover > h2 {
+    margin: 0;
+    transition: top .2s;
+    top: 0; }
+
+  .card-1:hover > p {
+    margin: 0;
+    transition: top .4s;
+    visibility: visible;
+    display: block;
+    top: 29%; }
+
+  .card-1:not(:hover) > h2 {
+    transition: top 1s;
+    top: 65%; }
+
+  .card-1:not(:hover) > p {
+    transition: top 1s;
+    visibility: hidden;
+    display: block;
+    top: 100%; }
+
+  .card-2 {
+    position: relative; }
+
+  .card-2::before {
+    content: "";
+    background-color: #4488bb;
+    width: 18.75rem;
+    height: 9.375rem; }
+
+  .card-2 > h2 {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 70%;
+    padding: 0.25rem 0 0  1.5rem;
+    color: #eee; }
+
+  .card-2 > p {
+    color: #eee;
+    display: none;
+    position: absolute;
+    top: 100%;
+    padding: 0 0 0 1.3125rem;
+    font-size: 14px; }
+
+  .card-2:hover > h2 {
+    margin: 0;
+    transition: top .2s;
+    top: 0; }
+
+  .card-2:hover > p {
+    margin: 0;
+    transition: top .4s;
+    visibility: visible;
+    display: block;
+    top: 29%; }
+
+  .card-2:not(:hover) > h2 {
+    transition: top 1s;
+    top: 65%; }
+
+  .card-2:not(:hover) > p {
+    transition: top 1s;
+    visibility: hidden;
+    display: block;
+    top: 100%; }
+
+  .card-3 {
+    position: relative; }
+
+  .card-3::before {
+    content: "";
+    background-color: #4488bb;
+    width: 18.75rem;
+    height: 9.375rem; }
+
+  .card-3 > h2 {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 70%;
+    padding: 0.25rem 0 0  1.5rem;
+    color: #eee; }
+
+  .card-3 > p {
+    color: #eee;
+    display: none;
+    position: absolute;
+    top: 100%;
+    padding: 0 0 0 1.3125rem;
+    font-size: 14px; }
+
+  .card-3:hover > h2 {
+    margin: 0;
+    transition: top .2s;
+    top: 0; }
+
+  .card-3:hover > p {
+    margin: 0;
+    transition: top .4s;
+    visibility: visible;
+    display: block;
+    top: 29%; }
+
+  .card-3:not(:hover) > h2 {
+    transition: top 1s;
+    top: 65%; }
+
+  .card-3:not(:hover) > p {
+    transition: top 1s;
+    visibility: hidden;
+    display: block;
+    top: 100%; }
+
+  .card-4 {
+    position: relative; }
+
+  .card-4::before {
+    content: "";
+    background-color: #4488bb;
+    width: 18.75rem;
+    height: 9.375rem; }
+
+  .card-4 > h2 {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 70%;
+    padding: 0.25rem 0 0  1.5rem;
+    color: #eee; }
+
+  .card-4 > p {
+    color: #eee;
+    display: none;
+    position: absolute;
+    top: 100%;
+    padding: 0 0 0 1.3125rem;
+    font-size: 14px; }
+
+  .card-4:hover > h2 {
+    margin: 0;
+    transition: top .2s;
+    top: 0; }
+
+  .card-4:hover > p {
+    margin: 0;
+    transition: top .4s;
+    visibility: visible;
+    display: block;
+    top: 29%; }
+
+  .card-4:not(:hover) > h2 {
+    transition: top 1s;
+    top: 65%; }
+
+  .card-4:not(:hover) > p {
+    transition: top 1s;
+    visibility: hidden;
+    display: block;
+    top: 100%; }
+
+  .card-5 {
+    position: relative; }
+
+  .card-5::before {
+    content: "";
+    background-color: #4488bb;
+    width: 18.75rem;
+    height: 9.375rem; }
+
+  .card-5 > h2 {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 70%;
+    padding: 0.25rem 0 0  1.5rem;
+    color: #eee; }
+
+  .card-5 > p {
+    color: #eee;
+    display: none;
+    position: absolute;
+    top: 100%;
+    padding: 0 0 0 1.3125rem;
+    font-size: 14px; }
+
+  .card-5:hover > h2 {
+    margin: 0;
+    transition: top .2s;
+    top: 0; }
+
+  .card-5:hover > p {
+    margin: 0;
+    transition: top .4s;
+    visibility: visible;
+    display: block;
+    top: 29%; }
+
+  .card-5:not(:hover) > h2 {
+    transition: top 1s;
+    top: 65%; }
+
+  .card-5:not(:hover) > p {
+    transition: top 1s;
+    visibility: hidden;
+    display: block;
+    top: 100%; } }
 
 /*# sourceMappingURL=index.css.map */

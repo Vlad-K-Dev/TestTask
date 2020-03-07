@@ -5,6 +5,98 @@ $description: #aaa;
 $color_fish_text: #fff;
 $head_element_width: 18.75rem;
 
+@mixin form_styles{
+  fieldset{
+    border:none;
+    position: relative;
+  }
+
+  .form__title{
+    color: $text_color;
+    font-size: 1.5rem;
+    margin: 1rem  0 1rem 0.3125rem;
+  }
+
+  input[name="name"],input[name="email"], select[name="select_country"]{
+    outline: none;
+    width: 17.5rem;
+    height: 3rem;
+    border: 1px solid $text_color;
+    border-radius: .2rem;
+    background-color: $form_inputs;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  label[for="email"],  label[for="name"] {
+    display: block;
+    position: absolute;
+    font-size: 0.5rem;
+    left: 1.5rem;
+    top: 4.5rem;
+    color: #aaa;
+  }
+
+  label[for="name"]{
+    left: 1.5rem;
+    top: 8.6rem;
+  }
+
+  option[name="select_cnt"] {
+    color: $description;
+  }
+
+  input[type="checkbox"]{
+    position: relative;
+    color: $description
+  }
+
+  input[type="checkbox"]:before{
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    border-radius: .2rem;
+    background: $form_inputs;
+  }
+
+  label[for="checkbox"]{
+    color: $description;
+    text-align: center;
+    padding: 0 0 0 .5rem;
+  }
+
+  .form_bottomBtn{
+    width: 17.5rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+    input[name="submit_btn"]{
+      margin-top: 16px;
+      width: 7.8125rem;
+      height: 1.875rem;
+      font-size: 16px;
+      border: none;
+      border-radius: .1rem;
+      color: #fff;
+      background: linear-gradient(to right, #306287, #4386b9);
+      text-transform: capitalize;
+    }
+
+    .formHyperLink{
+      color: $description;
+      text-transform: capitalize;
+      width: 7.8125rem;
+      text-align: center;
+    }
+  }
+}
+
+
   @media (max-width: 599px) { 
     .wrapper{
       display: flex;
@@ -19,7 +111,6 @@ $head_element_width: 18.75rem;
       height: 40.9375rem;
       width: 100%;
       background-image: url("../images/header_bg.jpg");
-
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -56,7 +147,7 @@ $head_element_width: 18.75rem;
             justify-content: center;
           }
     }
-        form{
+        form {
           display: flex;
           flex-flow: row wrap;
           justify-content: center;
@@ -65,94 +156,7 @@ $head_element_width: 18.75rem;
           border-radius: .1rem;
           box-shadow: 0px 0px 8px 0px grey;
           background: #fff;
-            fieldset{
-              border:none;
-              position: relative;
-            }
-
-          .form__title{
-              color: $text_color;
-              font-size: 1.5rem;
-              margin: 1rem  0 1rem 0.3125rem;
-            }
-
-            input[name="name"],input[name="email"], select[name="select_country"]{
-              outline: none;
-              width: 17.5rem;
-              height: 3rem;
-              border: 1px solid $text_color;
-              border-radius: .2rem;
-              background-color: $form_inputs;
-              margin-bottom: 16px;
-              position: relative;
-            }
-
-            label[for="email"],  label[for="name"] {
-              display: block;
-              position: absolute;
-              font-size: 0.5rem;
-              left: 1.5rem;
-              top: 4.5rem;
-              color: #aaa;
-            }
-
-            label[for="name"]{
-              left: 1.5rem;
-              top: 8.6rem;
-            }
-
-            option[name="select_cnt"] {
-              color: $description;
-            }
-
-            input[type="checkbox"]{
-              position: relative;
-              color: $description
-            }
-
-            input[type="checkbox"]:before{
-              content: "";
-              display: inline-block;
-              width: 18px;
-              height: 18px;
-              position: absolute;
-              left: 0;
-              border-radius: .2rem;
-              background: $form_inputs;
-            }
-
-              label[for="checkbox"]{
-                color: $description;
-                text-align: center;
-                padding: 0 0 0 .5rem;
-              }
-
-            .form_bottomBtn{
-              width: 17.5rem;
-              display: flex;
-              flex-flow: row;
-              justify-content: space-between;
-              align-items: baseline;
-
-                input[name="submit_btn"]{
-                  margin-top: 16px;
-                  width: 7.8125rem;
-                  height: 1.875rem;
-                  font-size: 16px;
-                  border: none;
-                  border-radius: .1rem;
-                  color: #fff;
-                  background: linear-gradient(to right, #306287, #4386b9);
-                  text-transform: capitalize;
-                }
-
-                .formHyperLink{
-                  color: $description;
-                  text-transform: capitalize;
-                  width: 7.8125rem;
-                  text-align: center;
-                }
-            }
+            @include form_styles;
         }
 
     //_________________End header styles________________//
@@ -282,7 +286,163 @@ $head_element_width: 18.75rem;
   // @media (min-width: 900px) {  }
 
 
-  // @media (min-width: 1200px) {  }
+ @media (min-width: 1200px) {
+   .wrapper{
+     display: flex;
+     flex-flow: row wrap;
+   }
+   .head{
+     position: relative;
+     font-family: $font;
+     height: 400px;
+     width: 100%;
+     background-image: url("../images/header_bg_lg.jpg");
+     background-position: top center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     display: flex;
+     flex-flow: row wrap;
+     justify-content: space-evenly;
+
+     .head__textWrapper{
+       width: 31.25rem;
+     }
+     .head__title{
+       width: 20.75rem;
+       margin: 1.875rem 0 0 0;
+       font-size: 2rem;
+       color: $color_fish_text;
+     }
+
+     .head__title::before{
+       content: "";
+       position: absolute;
+       top: 5.5rem;
+       width: $head_element_width;
+       height: 0.3125rem;
+       background: $color_fish_text;
+     }
+
+     .head__text{
+       margin: 4.25rem 0 2rem 0 ;
+       font-size: 0.75rem;
+       line-height: 1.5;
+       color: $color_fish_text;
+     }
+
+     .wrapper__form{
+       display: flex;
+       flex-flow: row wrap;
+       justify-content: center;
+     }
+
+     form {
+       display: flex;
+       flex-flow: row wrap;
+       justify-content: center;
+       width: $head_element_width;
+       height:21.25rem;
+       margin: 1.875rem 0;
+       border-radius: .1rem;
+       box-shadow: 0 0 8px 0 grey;
+       background: #fff;
+       @include form_styles;
+     }
+   }
+
+   //_________________Cards___________________________//
+
+    main{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+   @each $index, $card_bg in (1,card1_lg),
+           (2,card2_lg),
+           (3,card3_lg),
+           (4,card4_lg),
+           (5,card5_lg) {
+     .card-#{$index} {
+       margin: 0.625rem;
+       height: 9.375rem;
+       width: $head_element_width;
+       background-image: url('../images/decstopImages/#{$card_bg}.jpg');
+       background-blend-mode: screen, difference, lighten;
+       background-repeat: no-repeat;
+       background-size: cover;
+     }
+   }
+
+   .cards{
+     width: 1200px;
+     display: flex;
+     flex-flow: row wrap;
+     align-items: center;
+     font-family: $font;
+   }
+
+   @each $index in (1),
+           (2),
+           (3),
+           (4),
+           (5) {
+     .card-#{$index}{
+       position: relative;
+     }
+     .card-#{$index}::before{
+       content: "";
+       background-color: #4488bb;
+       width: $head_element_width;
+       height:  9.375rem;
+     }
+
+
+     .card-#{$index} > h2{
+       width: 100%;
+       height: 40px;
+       position: absolute;
+       top: 70%;
+       padding:  0.25rem 0 0  1.5rem;
+       color: #eee;
+     }
+
+     .card-#{$index}>p{
+       color: #eee;
+       display: none;
+       position: absolute;
+       top: 100%;
+       padding: 0 0 0 1.3125rem;
+       font-size: 14px;
+     }
+
+     .card-#{$index}:hover >h2{
+       margin: 0;
+       transition: top .2s;
+       top: 0;
+     }
+
+     .card-#{$index}:hover > p{
+       margin: 0;
+       transition: top .4s;
+       visibility: visible;
+       display: block;
+       top: 29%;
+
+     }
+
+     .card-#{$index}:not(:hover) > h2{
+       transition: top 1s;
+       top: 65%;
+     }
+
+     .card-#{$index}:not(:hover) > p{
+       transition: top 1s;
+       visibility: hidden;
+       display: block;
+       top: 100%;
+     }
+   }
+ }
 
 
   // @media (min-width: 1800px) {  }
