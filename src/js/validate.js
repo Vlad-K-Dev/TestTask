@@ -1,42 +1,47 @@
-let submit = document.getElementById('js-submit');
+document.addEventListener('DOMContentLoaded', function () {
+    const submit = document.getElementById('js-submit');
+    const errorContainer = document.querySelector('#js-error');
+    const regExpsObj = {
+        name: /[a-zA-Zа-яА-Я|\s-| ]/gm,
+        email: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    };
 
-submit.addEventListener('click', (e) =>{
-        e.preventDefault();
-    let email = document.getElementById('email').value;
-    let name = document.getElementById('name').value;
-    let selectCountry = document.getElementById('js-select__cnt').value;
-    let agree = document.getElementById('js-checkbox').spellcheck
+    const form= document.querySelector('form');
+    errorContainer.removeAttribute('class');
+    form.addEventListener('focusout', function (event) {
 
-    validateForm(email, name, selectCountry, agree);
+        let currentInput = event.target;
+        let regName = currentInput.getAttribute('name');
+        let validData  = '';
+            if(currentInput.getAttribute('name') === regName && currentInput.value !== ''){
+                errorContainer.removeAttribute('class');
+                if(regExpsObj.hasOwnProperty(regName)){
+                    validData = regExpsObj[regName].exec(currentInput.value)
+                }
+                if(!regExpsObj.hasOwnProperty(regName)){
+                    validData = currentInput.value
+                }
+                errorContainer.setAttribute('class', 'error');
+            }
 
+            if(!validData) {
+                currentInput.classList.add('wrapper__form__input-error');
+                errorContainer.setAttribute('class', 'error');
+                errorContainer.innerText = `Enter correct ${regName}`;
+                errorContainer.classList.add(`error${regName}`);
+            }
+
+            if(currentInput.value === '') {
+                errorContainer.setAttribute('class', 'error');
+                errorContainer.innerText = `Can be empty`;
+                errorContainer.classList.add(`error${regName}`);
+            }
+    });
+    submit.addEventListener('click', (e) =>{
+            e.preventDefault()
+    });
 });
 
-function validateForm(email, name, country, agree){
-    let regExpName = /[a-zA-Zа-яА-Я|\s-| ]/gm;
-    let regExpEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    let validEmail = regExpEmail.exec(email);
-    let validName = regExpName.exec(name);
-
-
-    let errorMessage = document.getElementById('js-error');
-
-    if(validEmail === null){
-        errorMessage.innerText = 'Enter correct email'
-        errorMessage.style.display = 'flex'
-    } else {
-        errorMessage.style.display = 'none'
-    }
-
-    // if(validName === null){
-    //     errorMessage.innerText = 'Enter correct name'
-    //     errorMessage.style.display = 'flex'
-    // } else {
-    //     errorMessage.style.display = 'none'
-    // }
-
-    console.log(validEmail)
-    console.log(validName)
-}
 
 
 

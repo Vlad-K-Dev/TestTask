@@ -1,0 +1,156 @@
+
+@import "error";
+
+@mixin form_styles{
+  fieldset{
+    border:none;
+    position: relative;
+  }
+  @include errorMess;
+
+
+  .form__title{
+    color: $text_color;
+    font-size: 1.5rem;
+    margin: 1rem  0 1rem 0;
+  }
+
+  .input-field{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  input[name="name"],input[name="email"], select[name="select_country"]{
+    outline: none;
+    width: 17.5rem;
+    height: 3rem;
+    padding:0 0 0 0.468rem;
+    @media (min-width: 1200px) {
+        width: 15.652rem;
+    }
+    border: 1px solid $text_color;
+    border-radius: .2rem;
+    background-color: $form_inputs;
+    color: $text_color;
+    position: relative;
+    transition: 0.2s;
+  }
+
+  label[for="email"],  label[for="name"] {
+    display: block;
+    position: absolute;
+    left: 0.468rem;
+    font-size: 1rem;
+    transition: .2s;
+    color: #aaa;
+  }
+  input[name="email"]:focus ~ label[for="email"],
+  input[name="name"]:focus ~ label[for="name"]{
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    display: block;
+    transition: 0.2s;
+    font-size: .5rem;
+    color: #aaa;
+    font-weight:700;
+  }
+
+  //______clear icon_______
+
+  .clear{
+    content: url("../images/clear.png");
+    position: absolute;
+    right: 0.8125rem;
+    height: 0.625rem;
+    cursor: pointer;
+  }
+
+  //_____error input_______
+
+  select[name="select_country"]{
+    color: #bebebe;
+    position: relative;
+    display: inline-block;
+    border: none;
+    appearance : none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url('../images/down-arrow.png') no-repeat  center;
+    outline: none;
+  }
+
+  option[name="select_cnt"] {
+    color: $description;
+  }
+
+  input[type="checkbox"]{
+    position: relative;
+    color: $description
+  }
+
+  input[type="checkbox"]:before{
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    left: 0;
+    border-radius: .2rem;
+    background: $form_inputs;
+  }
+
+  label[for="checkbox"]{
+    color: $description;
+    text-align: center;
+    padding: 0 0 0 .5rem;
+  }
+
+  input[type=checkbox]::after{
+    content: "";
+    position: absolute;
+    font-size: 16px;
+  }
+
+  input[type=checkbox]:checked  + label[for="checkbox"]::before{
+    position: absolute;
+    content: url("../images/checked.png");
+    left: .8rem;
+  }
+
+  .wrapper__form__input-error{
+    color: #bb4444;
+    border: 1px solid #bb4444;
+  }
+
+  .form_bottomBtn{
+    width: 17.5rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+    input[name="submit_btn"]{
+      margin-top: 16px;
+      width: 7.8125rem;
+      height: 1.875rem;
+      font-size: 16px;
+      border: none;
+      border-radius: .1rem;
+      color: #fff;
+      background: linear-gradient(to right, #306287, #4386b9);
+      text-transform: capitalize;
+    }
+
+    .formHyperLink{
+      cursor: pointer;
+      color: $description;
+      text-transform: capitalize;
+      width: 7.8125rem;
+      text-align: center;
+    }
+  }
+}

@@ -1,27 +1,45 @@
-.error {
-  position: relative;
-  width: 10.5rem;
-  height: 2.1875rem;
-  background: #bb4444;
-  border-radius: .2rem;
-  color: #eee;
-  font-size: 16px;
-  top: 2rem;
+.overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: black;
+  opacity: .7;
+  z-index: 5; }
+
+.modal-window {
+  font-family: Arial, Regular;
   display: none;
   flex-direction: column;
-  justify-content: center;
-  text-align: center; }
-
-.error::before {
-  content: "";
   position: absolute;
-  left: 70px;
-  bottom: 30px;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 18px solid #bb4444; }
+  width: 36.875rem;
+  background: #fff;
+  top: 27.1875rem;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 6; }
+
+.modal-window__cloce {
+  position: absolute;
+  right: 1.224rem;
+  top: 1.2425rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  cursor: pointer; }
+
+.modal-window__head {
+  margin: 1.4625rem 0 1.875rem  1.25rem; }
+
+.modal-window__text {
+  margin: 0 0 0 1.29125rem; }
+
+.modal-window__buttonWraper {
+  margin: 20px 0;
+  display: flex;
+  justify-content: flex-end; }
 
 @media (max-width: 599px) {
   .wrapper {
@@ -70,11 +88,46 @@
     width: 18.75rem;
     height: 21.25rem;
     border-radius: .1rem;
-    box-shadow: 0px 0px 8px 0px grey;
+    box-shadow: 0 0 8px 0 grey;
     background: #fff; }
     form fieldset {
       border: none;
       position: relative; }
+    form .error {
+      position: absolute;
+      width: 10.5rem;
+      height: 2.1875rem;
+      background: #bb4444;
+      border-radius: .2rem;
+      color: #eee;
+      font-size: 16px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      z-index: 4; }
+    form .erroremail {
+      display: flex;
+      left: 3.5rem;
+      top: 7.5rem; }
+    form .errorname {
+      display: flex;
+      left: 3.5rem;
+      top: 11.5rem; }
+    form .errorselect_country {
+      display: flex;
+      left: 3.5rem;
+      top: 15.5rem; }
+    form .error::before {
+      content: "";
+      position: absolute;
+      left: 70px;
+      bottom: 30px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 18px solid #bb4444; }
     form .form__title {
       color: #4287ba;
       font-size: 1.5rem;
@@ -89,14 +142,21 @@
       outline: none;
       width: 17.5rem;
       height: 3rem;
+      padding: 0 0 0 0.468rem;
       border: 1px solid #4287ba;
       border-radius: .2rem;
       background-color: #eeeeee;
+      color: #4287ba;
       position: relative;
-      transition: 0.2s; }
+      transition: 0.2s; } }
+    @media (max-width: 599px) and (min-width: 1200px) {
+      form input[name="name"], form input[name="email"], form select[name="select_country"] {
+        width: 15.652rem; } }
+@media (max-width: 599px) {
     form label[for="email"], form label[for="name"] {
       display: block;
       position: absolute;
+      left: 0.468rem;
       font-size: 1rem;
       transition: .2s;
       color: #aaa; }
@@ -116,17 +176,15 @@
       right: 0.8125rem;
       height: 0.625rem;
       cursor: pointer; }
-    form input[name="email"] {
-      color: #bb4444;
-      border: 1px solid #bb4444; }
     form select[name="select_country"] {
       color: #bebebe;
       position: relative;
       display: inline-block;
+      border: none;
       appearance: none;
       -moz-appearance: none;
       -webkit-appearance: none;
-      background: url("../images/close.png") no-repeat right center;
+      background: url("../images/down-arrow.png") no-repeat center;
       outline: none; }
     form option[name="select_cnt"] {
       color: #aaa; }
@@ -154,6 +212,9 @@
       position: absolute;
       content: url("../images/checked.png");
       left: .8rem; }
+    form .wrapper__form__input-error {
+      color: #bb4444;
+      border: 1px solid #bb4444; }
     form .form_bottomBtn {
       width: 17.5rem;
       display: flex;
@@ -171,6 +232,7 @@
         background: linear-gradient(to right, #306287, #4386b9);
         text-transform: capitalize; }
       form .form_bottomBtn .formHyperLink {
+        cursor: pointer;
         color: #aaa;
         text-transform: capitalize;
         width: 7.8125rem;
@@ -333,11 +395,11 @@
       padding-top: 1rem;
       border-top: 1px dotted #aaaaaa; }
     .promo-block__wrapperContent .promo-block__list {
-      position: relative;
       display: flex;
       flex-flow: row wrap;
+      position: relative;
       align-items: center;
-      margin: 16px 0 0  3.75rem;
+      margin: 16px 0 0 3.75rem;
       color: #4287ba;
       width: 14.375rem;
       list-style: none;
@@ -435,7 +497,7 @@
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
-      width: 18.75rem;
+      width: 18.125rem;
       height: 21.25rem;
       margin: 1.875rem 0;
       border-radius: .1rem;
@@ -445,6 +507,41 @@
       .head form fieldset {
         border: none;
         position: relative; }
+      .head form .error {
+        position: absolute;
+        width: 10.5rem;
+        height: 2.1875rem;
+        background: #bb4444;
+        border-radius: .2rem;
+        color: #eee;
+        font-size: 16px;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        z-index: 4; }
+      .head form .erroremail {
+        display: flex;
+        left: 3.5rem;
+        top: 7.5rem; }
+      .head form .errorname {
+        display: flex;
+        left: 3.5rem;
+        top: 11.5rem; }
+      .head form .errorselect_country {
+        display: flex;
+        left: 3.5rem;
+        top: 15.5rem; }
+      .head form .error::before {
+        content: "";
+        position: absolute;
+        left: 70px;
+        bottom: 30px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 18px solid #bb4444; }
       .head form .form__title {
         color: #4287ba;
         font-size: 1.5rem;
@@ -459,14 +556,21 @@
         outline: none;
         width: 17.5rem;
         height: 3rem;
+        padding: 0 0 0 0.468rem;
         border: 1px solid #4287ba;
         border-radius: .2rem;
         background-color: #eeeeee;
+        color: #4287ba;
         position: relative;
-        transition: 0.2s; }
+        transition: 0.2s; } }
+      @media (min-width: 1200px) and (min-width: 1200px) {
+        .head form input[name="name"], .head form input[name="email"], .head form select[name="select_country"] {
+          width: 15.652rem; } }
+@media (min-width: 1200px) {
       .head form label[for="email"], .head form label[for="name"] {
         display: block;
         position: absolute;
+        left: 0.468rem;
         font-size: 1rem;
         transition: .2s;
         color: #aaa; }
@@ -486,17 +590,15 @@
         right: 0.8125rem;
         height: 0.625rem;
         cursor: pointer; }
-      .head form input[name="email"] {
-        color: #bb4444;
-        border: 1px solid #bb4444; }
       .head form select[name="select_country"] {
         color: #bebebe;
         position: relative;
         display: inline-block;
+        border: none;
         appearance: none;
         -moz-appearance: none;
         -webkit-appearance: none;
-        background: url("../images/close.png") no-repeat right center;
+        background: url("../images/down-arrow.png") no-repeat center;
         outline: none; }
       .head form option[name="select_cnt"] {
         color: #aaa; }
@@ -524,6 +626,9 @@
         position: absolute;
         content: url("../images/checked.png");
         left: .8rem; }
+      .head form .wrapper__form__input-error {
+        color: #bb4444;
+        border: 1px solid #bb4444; }
       .head form .form_bottomBtn {
         width: 17.5rem;
         display: flex;
@@ -541,6 +646,7 @@
           background: linear-gradient(to right, #306287, #4386b9);
           text-transform: capitalize; }
         .head form .form_bottomBtn .formHyperLink {
+          cursor: pointer;
           color: #aaa;
           text-transform: capitalize;
           width: 7.8125rem;
@@ -853,35 +959,6 @@ article {
   margin: 1.25rem 0;
   border-left: 2.5px solid #4488bb;
   color: #4488bb; }
-
-.modal-window {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  width: 36.875rem;
-  background: #fff;
-  top: 20px;
-  right: 20px;
-  z-index: 6; }
-
-.modal-window__cloce {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer; }
-
-.modal-window__head {
-  margin: 28px 0 30px 20px; }
-
-.modal-window__text {
-  margin: 0 20px 0 20px; }
-
-.modal-window__buttonWraper {
-  margin: 20px 0;
-  display: flex;
-  justify-content: flex-end; }
 
 #cancel {
   border: none;

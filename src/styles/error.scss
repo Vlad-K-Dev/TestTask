@@ -1,0 +1,46 @@
+@mixin errorMess {
+  .error {
+    position: absolute;
+    width: 10.5rem;
+    height: 2.1875rem;
+    background: #bb4444;
+    border-radius: .2rem;
+    color: #eee;
+    font-size: 16px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    z-index: 4;
+  }
+
+  .erroremail {
+    display: flex;
+    left: 3.5rem;
+    top: 7.5rem;
+  }
+
+  .errorname {
+    display: flex;
+    left: 3.5rem;
+    top: 11.5rem;
+  }
+
+  .errorselect_country{
+    display: flex;
+    left: 3.5rem;
+    top: 15.5rem;
+  }
+
+  .error::before {
+    content: "";
+    position: absolute;
+    left: 70px;
+    bottom: 30px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 18px solid #bb4444;
+  }
+}

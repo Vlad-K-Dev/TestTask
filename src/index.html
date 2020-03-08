@@ -8,42 +8,49 @@
     <title>Title</title>
 </head>
 <body>
+<div class="overlay" id="js-overlay"></div>
+<div class="modal-window" id="js-modal">
+    <span class="modal-window__cloce" id="js-modalClose"><img src="images/close.png" alt=""></span>
+    <h3 class="modal-window__head">External link</h3>
+    <p class="modal-window__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eius molestias rem repellat. Ab ad alias aliquam amet aperiam assumenda autem debitis eos eum eveniet exercitationem, fugiat fugit, ipsa laboriosam laborum maiores maxime minima nam numquam obcaecati omnis perspiciatis provident quidem quis quos repellendus rerum sequi similique unde ut! A architecto deserunt dolorem doloremque dolores doloribus eius eos est facere iusto laudantium magni natus nesciunt obcaecati odit perferendis perspiciatis quas quibusdam reprehenderit sunt tempore tenetur, totam voluptate? Consequatur iusto laboriosam officia optio recusandae sapiente similique. Aut mollitia nemo numquam velit.</p>
+    <div class="modal-window__buttonWraper">
+        <button id="cancel">cancel</button>
+        <button id="accept">accept</button>
+    </div>
+</div>
 <div class="wrapper">
     <header class="head">
         <div class="head__textWrapper">
             <h1 class="head__title" id="js-head_title">Banner head</h1>
             <p class="head__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi similique necessitatibus fugit deleniti laboriosam aliquid consectetur temporibus? Similique nisi eaque ab repellendus, pariatur tempore excepturi earum.</p>
         </div>
-
-
-        
             <div class="wrapper__form">
             <form action="" class="form">
                 <fieldset>
-                    <span class="error" id="js-error">Enter correct E-Mail</span>
+                    <span class="error" id="js-error"></span>
                     <h2 class="form__title">Request form</h2>
                     <div class="input-field">
-                        <input class="wrapper__form__input wrapper__form__input-error" type="text" id="email" name="email" value="">
+                        <input class="wrapper__form__input " type="text" id="email" name="email" value="">
                         <label for="email">Enter you E-Mail</label>
                         <span class="clear"></span>
                     </div>
                     <div class="input-field">
-                        <input class="wrapper__form__input wrapper__form__input-error" type="text" id="name" name="name" value="">
+                        <input class="wrapper__form__input " type="text" id="name" name="name" value="">
                         <label for="name">Enter you name</label>
                         <span class="clear"></span>
                     </div>
-                    <select class="wrapper__form__input wrapper__form__input-error" name="select_country" id="js-select__cnt" >
+                    <select class="wrapper__form__input " name="select_country" id="js-select__cnt" >
                         <option value=""  name="select_cnt" disabled selected >Select you country</option>
                         <option value="USA">USA</option>
                         <option value="Germani">Germani</option>
                         <option value="England">England</option>
                         <option value="Russia">Russia</option>
                     </select>
-                    <input type="checkbox" id="js-checkbox" name="agree" value="true">
-                    <label for="agree">i agree with Terms & Conditions</label>
+                    <input type="checkbox" class="wrapper__form__input" id="js-checkbox" name="agree" value="true">
+                    <label for="checkbox">I agree with Terms & Conditions</label>
                     <div class="form_bottomBtn">
                         <input type="submit" value="submit" name="submit_btn" id="js-submit">
-                        <span class="formHyperLink">hyperlink</span>
+                        <span class="formHyperLink" id="js-hyperlink">hyperlink</span>
                     </div>
                 </fieldset>
             </form>
@@ -89,7 +96,7 @@
             <div class="promo-block__wrapperContent">
             <h2 class="promo-block__title">Title-text</h2>
             <ol class="promo-block__menu">
-                <li class="promo-block__list">Duis aute irure dolor in reprehenderit in voluptate velit </li>
+                <li class="promo-block__list">Duis aute irure dolor<sup>1</sup> in reprehenderit in voluptate velit </li>
                 <li class="promo-block__list">Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
                 <li class="promo-block__list">Ut enim ad minim veniam, quis nostrud exercitation</li>
                 <li class="promo-block__list">Et dolore magna aliqua.</li>
@@ -102,28 +109,20 @@
     <article>
         <section class="disclamers">
           <p>
-                reprehederit - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam consequatur dolor, tenetur harum quaerat repellendus.</p>
+                <dt>1</dt>
+                <dd>reprehederit - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam consequatur dolor, tenetur harum quaerat repellendus.</dd>
                 
                 <dt>2</dt>
-                    <dd>Tempor - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt porro ducimus exercitationem consequatur. Fugit, vero?</dd>
+                <dd>Tempor - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt porro ducimus exercitationem consequatur. Fugit, vero?</dd>
                 
                 <dt>3</dt>
-                    <dd>Amet - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, error. Laborum accusantium ipsum excepturi iste dignissimos!</dd>
+                <dd>Amet - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, error. Laborum accusantium ipsum excepturi iste dignissimos!</dd>
                 
             </dl>
         </section>
     </article>
-
-    <div class="modal-window">
-        <span class="modal-window__cloce"><img src="images/close.png" alt=""></span>
-        <h3 class="modal-window__head">External link</h3>
-        <p class="modal-window__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eius molestias rem repellat. Ab ad alias aliquam amet aperiam assumenda autem debitis eos eum eveniet exercitationem, fugiat fugit, ipsa laboriosam laborum maiores maxime minima nam numquam obcaecati omnis perspiciatis provident quidem quis quos repellendus rerum sequi similique unde ut! A architecto deserunt dolorem doloremque dolores doloribus eius eos est facere iusto laudantium magni natus nesciunt obcaecati odit perferendis perspiciatis quas quibusdam reprehenderit sunt tempore tenetur, totam voluptate? Consequatur iusto laboriosam officia optio recusandae sapiente similique. Aut mollitia nemo numquam velit.</p>
-        <div class="modal-window__buttonWraper">
-            <button id="cancel">cancel</button>
-            <button id="accept">accept</button>
-        </div>
-    </div>
 </div>
 <script src="js/validate.js"></script>
+<script src="js/modal.js"></script>
 </body>
 </html>
