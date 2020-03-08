@@ -20,26 +20,29 @@
             <div class="wrapper__form">
             <form action="" class="form">
                 <fieldset>
+                    <span class="error" id="js-error">Enter correct E-Mail</span>
                     <h2 class="form__title">Request form</h2>
                     <div class="input-field">
-                        <input type="text" id="email" name="email" value="">
+                        <input class="wrapper__form__input wrapper__form__input-error" type="text" id="email" name="email" value="">
                         <label for="email">Enter you E-Mail</label>
+                        <span class="clear"></span>
                     </div>
                     <div class="input-field">
-                        <input type="text" id="name" name="name" value="">
+                        <input class="wrapper__form__input wrapper__form__input-error" type="text" id="name" name="name" value="">
                         <label for="name">Enter you name</label>
+                        <span class="clear"></span>
                     </div>
-                    <select name="select_country" id="" >
+                    <select class="wrapper__form__input wrapper__form__input-error" name="select_country" id="js-select__cnt" >
                         <option value=""  name="select_cnt" disabled selected >Select you country</option>
                         <option value="USA">USA</option>
                         <option value="Germani">Germani</option>
                         <option value="England">England</option>
                         <option value="Russia">Russia</option>
                     </select>
-                    <input type="checkbox" id="checkbox" name="agree" value="true">
-                    <label for="checkbox">i agree with Terms & Conditions</label>
+                    <input type="checkbox" id="js-checkbox" name="agree" value="true">
+                    <label for="agree">i agree with Terms & Conditions</label>
                     <div class="form_bottomBtn">
-                        <input type="submit" value="submit" name="submit_btn">
+                        <input type="submit" value="submit" name="submit_btn" id="js-submit">
                         <span class="formHyperLink">hyperlink</span>
                     </div>
                 </fieldset>

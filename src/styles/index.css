@@ -1,6 +1,5 @@
-.form::before {
-  content: "Enter correct E-Mail";
-  position: absolute;
+.error {
+  position: relative;
   width: 10.5rem;
   height: 2.1875rem;
   background: #bb4444;
@@ -8,10 +7,21 @@
   color: #eee;
   font-size: 16px;
   top: 2rem;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   text-align: center; }
+
+.error::before {
+  content: "";
+  position: absolute;
+  left: 70px;
+  bottom: 30px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 18px solid #bb4444; }
 
 @media (max-width: 599px) {
   .wrapper {
@@ -100,6 +110,24 @@
       font-size: .5rem;
       color: #aaa;
       font-weight: 700; }
+    form .clear {
+      content: url("../images/clear.png");
+      position: absolute;
+      right: 0.8125rem;
+      height: 0.625rem;
+      cursor: pointer; }
+    form input[name="email"] {
+      color: #bb4444;
+      border: 1px solid #bb4444; }
+    form select[name="select_country"] {
+      color: #bebebe;
+      position: relative;
+      display: inline-block;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      background: url("../images/close.png") no-repeat right center;
+      outline: none; }
     form option[name="select_cnt"] {
       color: #aaa; }
     form input[type="checkbox"] {
@@ -288,49 +316,48 @@
   .promo-block__mac {
     display: none; }
 
-  .promo-block__title {
-    margin: 2.0625rem 0 0 0;
-    font-size: 3rem;
-    color: #4488bb;
-    text-align: center; }
-
-  ol {
-    counter-reset: counter;
-    padding: 0;
-    position: relative;
-    align-self: center; }
-
-  .promo-block__list:nth-last-child(-n + 5) {
-    padding-top: 1rem;
-    border-top: 1px dotted #aaaaaa; }
-
-  .promo-block__list {
-    position: relative;
+  .promo-block__wrapperContent {
     display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    margin: 16px 0 0  3.75rem;
-    color: #4287ba;
-    width: 14.375rem;
-    list-style: none;
-    font-size: 1.125rem;
-    font-weight: 600; }
-
-  .promo-block__list:before {
-    content: counter(counter);
-    counter-increment: counter;
-    position: absolute;
-    left: -3.5rem;
-    color: #eeeeee;
-    font-weight: 600;
-    background: #2980B9;
-    display: inline-block;
-    text-align: center;
-    margin: 0 10px;
-    line-height: 1.875rem;
-    width: 1.875rem;
-    height: 1.875rem;
-    border-radius: 50%; }
+    flex-direction: column; }
+    .promo-block__wrapperContent .promo-block__title {
+      margin: 2.0625rem 0 0 0;
+      font-size: 3rem;
+      color: #4488bb;
+      text-align: center; }
+    .promo-block__wrapperContent ol {
+      counter-reset: counter;
+      padding: 0;
+      position: relative;
+      align-self: center; }
+    .promo-block__wrapperContent .promo-block__list:nth-last-child(-n + 5) {
+      padding-top: 1rem;
+      border-top: 1px dotted #aaaaaa; }
+    .promo-block__wrapperContent .promo-block__list {
+      position: relative;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      margin: 16px 0 0  3.75rem;
+      color: #4287ba;
+      width: 14.375rem;
+      list-style: none;
+      font-size: 1.125rem;
+      font-weight: 600; }
+    .promo-block__wrapperContent .promo-block__list:before {
+      content: counter(counter);
+      counter-increment: counter;
+      position: absolute;
+      left: -3.5rem;
+      color: #eeeeee;
+      font-weight: 600;
+      background: #2980B9;
+      display: inline-block;
+      text-align: center;
+      margin: 0 10px;
+      line-height: 1.875rem;
+      width: 1.875rem;
+      height: 1.875rem;
+      border-radius: 50%; }
 
   article {
     display: flex;
@@ -341,6 +368,20 @@
   .disclamers {
     margin: 1.25rem 0;
     border-left: 2.5px solid #4488bb; } }
+@media (min-width: 600px) {
+  .cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around; }
+
+  .promo-block__mac {
+    display: none; } }
+@media (min-width: 900px) {
+  .promo-block {
+    display: flex; }
+
+  .promo-block__mac {
+    display: block; } }
 @media (min-width: 1200px) {
   .wrapper {
     font-family: Arial, Regular;
@@ -439,6 +480,24 @@
         font-size: .5rem;
         color: #aaa;
         font-weight: 700; }
+      .head form .clear {
+        content: url("../images/clear.png");
+        position: absolute;
+        right: 0.8125rem;
+        height: 0.625rem;
+        cursor: pointer; }
+      .head form input[name="email"] {
+        color: #bb4444;
+        border: 1px solid #bb4444; }
+      .head form select[name="select_country"] {
+        color: #bebebe;
+        position: relative;
+        display: inline-block;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: url("../images/close.png") no-repeat right center;
+        outline: none; }
       .head form option[name="select_cnt"] {
         color: #aaa; }
       .head form input[type="checkbox"] {
