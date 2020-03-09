@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('focusout', function (event) {
         let currentInput = event.target;
         let regName = currentInput.getAttribute('name');
+
             if(currentInput.getAttribute('name') === regName && currentInput.value !== ""){
                 errorContainer.removeAttribute('class');
                 if(regExpsObj.hasOwnProperty(regName)){
@@ -24,21 +25,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 errorContainer.setAttribute('class', 'error');
             }
 
-            if(!validData) {
+            if(!validData || !currentInput.value) {
                 currentInput.classList.add('wrapper__form__input-error');
             } else if(currentInput.value !== Number) {
                 currentInput.classList.remove('wrapper__form__input-error');
             }
-            currentInput.addEventListener('focuson', ()=>{
-                errorContainer.setAttribute('class', 'error');
-                errorContainer.innerText = `Enter correct ${regName}`;
-                errorContainer.classList.add(`error${regName}`);
-            })
-            // if(currentInput.value === '') {
-            //     errorContainer.setAttribute('class', 'error');
-            //     errorContainer.innerText = `Can be empty`;
-            //     errorContainer.classList.add(`error${regName}`);
-            // }
+
+    }, true);
+
+    form.addEventListener('focusin', function (event) {
+        let currentInput =  event.target;
+        let errorName = currentInput.getAttribute('name')
+        if(currentInput.classList.contains('wrapper__form__input-error')){
+            errorContainer.setAttribute('class', 'error');
+            errorContainer.innerText = `Enter correct ${errorName}`;
+            errorContainer.classList.add(`error${errorName}`);
+        }
     });
 
     submit.addEventListener('click', function(e){
