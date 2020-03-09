@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('focusout', function (event) {
         let currentInput = event.target;
         let regName = currentInput.getAttribute('name');
-
-            if(currentInput.getAttribute('name') === regName ){
+            if(currentInput.getAttribute('name') === regName && currentInput.value !== ""){
                 errorContainer.removeAttribute('class');
                 if(regExpsObj.hasOwnProperty(regName)){
                     validData = regExpsObj[regName].exec(currentInput.value)
@@ -27,16 +26,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if(!validData) {
                 currentInput.classList.add('wrapper__form__input-error');
+            } else if(currentInput.value !== Number) {
+                currentInput.classList.remove('wrapper__form__input-error');
+            }
+            currentInput.addEventListener('focuson', ()=>{
                 errorContainer.setAttribute('class', 'error');
                 errorContainer.innerText = `Enter correct ${regName}`;
                 errorContainer.classList.add(`error${regName}`);
-            }
-
-            if(currentInput.value === '') {
-                errorContainer.setAttribute('class', 'error');
-                errorContainer.innerText = `Can be empty`;
-                errorContainer.classList.add(`error${regName}`);
-            }
+            })
+            // if(currentInput.value === '') {
+            //     errorContainer.setAttribute('class', 'error');
+            //     errorContainer.innerText = `Can be empty`;
+            //     errorContainer.classList.add(`error${regName}`);
+            // }
     });
 
     submit.addEventListener('click', function(e){
