@@ -114,6 +114,10 @@
       display: flex;
       left: 3.5rem;
       top: 11.5rem; }
+    form .errorform {
+      display: flex;
+      bottom: -.5rem;
+      left: -.5rem; }
     form .errorselect_country {
       display: flex;
       left: 3.5rem;
@@ -151,7 +155,8 @@
       transition: 0.2s; } }
     @media (max-width: 599px) and (min-width: 1200px) {
       form input[name="name"], form input[name="email"], form select[name="select_country"] {
-        width: 15.652rem; } }
+        width: 16.5rem;
+        margin: 0 auto; } }
 @media (max-width: 599px) {
     form label[for="email"], form label[for="name"] {
       display: block;
@@ -220,7 +225,9 @@
       display: flex;
       flex-flow: row;
       justify-content: space-between;
-      align-items: baseline; }
+      align-items: baseline;
+      outline: 0;
+      outline-offset: 0; }
       form .form_bottomBtn input[name="submit_btn"] {
         margin-top: 16px;
         width: 7.8125rem;
@@ -229,6 +236,8 @@
         border: none;
         border-radius: .1rem;
         color: #fff;
+        outline: 0;
+        outline-offset: 0;
         background: linear-gradient(to right, #306287, #4386b9);
         text-transform: capitalize; }
       form .form_bottomBtn .formHyperLink {
@@ -528,6 +537,10 @@
         display: flex;
         left: 3.5rem;
         top: 11.5rem; }
+      .head form .errorform {
+        display: flex;
+        bottom: -.5rem;
+        left: -.5rem; }
       .head form .errorselect_country {
         display: flex;
         left: 3.5rem;
@@ -565,7 +578,8 @@
         transition: 0.2s; } }
       @media (min-width: 1200px) and (min-width: 1200px) {
         .head form input[name="name"], .head form input[name="email"], .head form select[name="select_country"] {
-          width: 15.652rem; } }
+          width: 16.5rem;
+          margin: 0 auto; } }
 @media (min-width: 1200px) {
       .head form label[for="email"], .head form label[for="name"] {
         display: block;
@@ -634,7 +648,9 @@
         display: flex;
         flex-flow: row;
         justify-content: space-between;
-        align-items: baseline; }
+        align-items: baseline;
+        outline: 0;
+        outline-offset: 0; }
         .head form .form_bottomBtn input[name="submit_btn"] {
           margin-top: 16px;
           width: 7.8125rem;
@@ -643,6 +659,8 @@
           border: none;
           border-radius: .1rem;
           color: #fff;
+          outline: 0;
+          outline-offset: 0;
           background: linear-gradient(to right, #306287, #4386b9);
           text-transform: capitalize; }
         .head form .form_bottomBtn .formHyperLink {

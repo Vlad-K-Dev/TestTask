@@ -353,15 +353,20 @@ $head_element_width: 18.75rem;
       flex-direction: column;
       position: relative;
       overflow: hidden;
-
     }
 
     .card-4, .card-5 {
       flex-grow: 1;
       margin: 1.5625rem 0 0 0;
-      width: 35.875rem;
-
+      width: 34.5rem;
     }
+    .cards > .card-4 {
+      margin-right: .317rem;
+    }
+    .cards > .card-5 {
+      margin-left: .317rem;
+    }
+
     .card_wrapper {
       width: 100%;
       height: 100%;

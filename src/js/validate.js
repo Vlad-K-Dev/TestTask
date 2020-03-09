@@ -6,14 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
         email: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
     };
 
-    const form= document.querySelector('form');
+    const form = document.querySelector('form');
+    const formInputs = document.querySelectorAll('.wrapper__form__input');
+    let validData  = '';
     errorContainer.removeAttribute('class');
     form.addEventListener('focusout', function (event) {
-
         let currentInput = event.target;
         let regName = currentInput.getAttribute('name');
-        let validData  = '';
-            if(currentInput.getAttribute('name') === regName && currentInput.value !== ''){
+
+            if(currentInput.getAttribute('name') === regName ){
                 errorContainer.removeAttribute('class');
                 if(regExpsObj.hasOwnProperty(regName)){
                     validData = regExpsObj[regName].exec(currentInput.value)
@@ -37,8 +38,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 errorContainer.classList.add(`error${regName}`);
             }
     });
-    submit.addEventListener('click', (e) =>{
-            e.preventDefault()
+
+    submit.addEventListener('click', function(e){
+            e.preventDefault();
+            for(let i = 0;i < formInputs.length; i++ ){
+                if(formInputs[i].value === ''){
+                    errorContainer.setAttribute('class', 'error');
+                    errorContainer.innerText = `Please fill in all fields`;
+                    errorContainer.classList.add(`errorform`);
+                }
+            }
     });
 });
 
