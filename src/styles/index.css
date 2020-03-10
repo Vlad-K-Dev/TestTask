@@ -1,3 +1,6 @@
+@media (max-width: 900px) {
+  .modal-window__text {
+    margin: 20px; } }
 .overlay {
   display: none;
   position: fixed;
@@ -59,9 +62,9 @@
   background: transparent;
   color: #aaaaaa; }
 
-@media screen and (max-width: 1600px) {
-  .modal-window {
-    width: 18.75rem; } }
+@media (max-width: 900px) {
+  .modal-window__text {
+    margin: 20px; } }
 .overlay {
   display: none;
   position: fixed;
@@ -123,9 +126,6 @@
   background: transparent;
   color: #aaaaaa; }
 
-@media screen and (max-width: 1600px) {
-  .modal-window {
-    width: 18.75rem; } }
 .wrapper {
   font-family: Arial, Regular;
   display: flex;

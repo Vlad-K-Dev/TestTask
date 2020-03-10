@@ -2,6 +2,14 @@
 @import "breakpoints";
 @import "mixins";
 
+@media (max-width: 900px) {
+  .modal-window {
+    //width: 18.75rem;
+  }
+  .modal-window__text{
+    margin: 20px;
+  }
+}
     .overlay {
       display: none;
       position: fixed;
@@ -71,10 +79,6 @@
       color: #aaaaaa;
     }
 
-@media screen and(max-width: 1600px){
-  .modal-window{
-    width: 18.75rem;
 
-  }
-}
+
 
