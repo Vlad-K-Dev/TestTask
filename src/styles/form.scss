@@ -52,7 +52,8 @@
     transition: 0.2s;
   }
 
-  label[for="email"],  label[for="name"] {
+  input[name="email"]::placeholder,
+  input[name="name"]::placeholder{
     display: block;
     position: absolute;
     left: 0.468rem;
@@ -60,9 +61,10 @@
     transition: .2s;
     color: #aaa;
   }
-  input[name="email"]:focus ~ label[for="email"],
-  input[name="name"]:focus ~ label[for="name"]{
+  input[name="email"]:focus::placeholder ,
+  input[name="name"]:focus::placeholder {
     position: absolute;
+    pointer-events: none;
     top: 5px;
     left: 8px;
     display: block;

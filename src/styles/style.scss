@@ -1,3 +1,5 @@
+@import "normolize.css";
+
 @import '_breakpoints';
 @import "mixins";
 @import "variables";
@@ -24,6 +26,7 @@
 
   @media screen and(min-width: 1800px) {
     .wrapper {
+      margin: 0 auto;
       width:75rem;
       font-family: $font;
       @include flex-column;
@@ -33,11 +36,4 @@
       @include description;
     }
   }
-
-
-
-
-
-
-
 

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 numMenu[i].addEventListener('click', function () {
                         overlay.style.display = 'block';
                         modal.style.display = 'block';
-                        modal.style.width = '18.75rem';
+                
                 });
                 modalClose.addEventListener('click', function () {
                         overlay.style.display = 'none';
