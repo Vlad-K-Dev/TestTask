@@ -1,0 +1,33 @@
+
+
+$screen-phone: 599px;
+$screen-small-tablet: 600px;
+$screen-lg-tablet: 900px;
+$screen-desktop: 1200px;
+$screen_lg_desktop: 1800px;
+
+$screen-max-tablet: $screen-desktop - 1px;
+$screen-max-small-desktop: $screen_lg_desktop - 1px;
+@mixin mediaPhone{
+  @media only screen and (max-width: $screen-phone){
+    @content;
+  }
+}
+
+@mixin mediaTablet{
+  @media only screen and(min-width: $screen-small-tablet) and (max-width:$screen-max-tablet){
+    @content
+  }
+}
+
+@mixin mediaDesktop{
+  @media only screen and(min-width: $screen-desktop) and(max-width: $screen-max-small-desktop){
+    @content
+  }
+}
+
+@mixin mediaLgDesktop{
+  @media only screen and(min-width: $screen_lg_desktop){
+    @content
+  }
+}

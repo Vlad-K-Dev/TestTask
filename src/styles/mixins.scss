@@ -1,0 +1,58 @@
+@import "variables";
+@import "breakpoints";
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@mixin promo__list_numbers{
+  content: counter(counter);
+  counter-increment: counter;
+  position: absolute;
+  left: -3.5rem;
+  color: $form_inputs;
+  font-weight: 600;
+  background: #2980B9;
+  display: inline-block;
+  text-align: center;
+  margin: 0 10px;
+  line-height: 1.875rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+
+}
+
+@mixin card_loop {
+  @each $index, $card_bg in (1, card1),
+          (2, card2),
+          (3, card3),
+          (4, card4),
+          (5, card5) {
+    .card-#{$index} {
+      margin: 1.25rem 0 0 0;
+
+      @include mediaPhone {
+        width: 18.75rem;
+      }
+
+      @include mediaTablet {
+        width: 20rem;
+      }
+
+      @include mediaDesktop {
+        width: 24.3125rem;
+        height: 9.375rem;
+      }
+      background-image: url('../images/#{$card_bg}.jpg');
+      background-blend-mode: screen, difference, lighten;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

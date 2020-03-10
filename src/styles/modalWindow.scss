@@ -1,45 +1,80 @@
-.overlay{
-  display: none;
-  position: fixed;
-  left: 0; right: 0; top: 0; bottom: 0;
-  background: black;
-  opacity: .7;
-  z-index: 5;
+@import "variables";
+@import "breakpoints";
+@import "mixins";
+
+    .overlay {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: black;
+      opacity: .7;
+      z-index: 5;
+    }
+
+    .modal-window {
+      font-family: $font;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      width: 36.875rem;
+      background: #fff;
+      top: 27.1875rem;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      border-radius: .2rem;
+      z-index: 6;
+    }
+
+    .modal-window__cloce {
+      position: absolute;
+      right: 1.224rem;
+      top: 1.2425rem;
+      width: 1.875rem;
+      height: 1.875rem;
+      cursor: pointer;
+    }
+
+    .modal-window__head {
+      margin: 1.4625rem 0 1.875rem 1.25rem;
+    }
+
+    .modal-window__text {
+      margin: 0 0 0 1.29125rem;
+    }
+
+    .modal-window__buttonWraper {
+      margin: 20px 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    #accept {
+      width: 7.8125rem;
+      height: 1.875rem;
+      font-size: 0.875rem;
+      border: none;
+      border-radius: .1rem;
+      color: #fff;
+      margin: 0 1.25rem;
+      background: linear-gradient(to right, #306287, #4386b9);
+      text-transform: capitalize;
+    }
+
+    #cancel {
+      border: none;
+      text-transform: capitalize;
+      background: transparent;
+      color: #aaaaaa;
+    }
+
+@media screen and(max-width: 1600px){
+  .modal-window{
+    width: 18.75rem;
+
+  }
 }
 
-.modal-window {
-  font-family: $font;
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  width: 36.875rem;
-  background: #fff;
-  top: 27.1875rem;
-  right: 0;
-  left: 0;
-  margin:  0 auto;
-  z-index: 6;
-}
-
-.modal-window__cloce {
-  position: absolute;
-  right: 1.224rem;
-  top: 1.2425rem;
-  width: 1.875rem;
-  height: 1.875rem;
-  cursor: pointer;
-}
-
-.modal-window__head {
-  margin: 1.4625rem 0 1.875rem  1.25rem;
-}
-
-.modal-window__text {
-  margin: 0 0 0 1.29125rem;
-}
-
-.modal-window__buttonWraper {
-  margin: 20px 0;
-  display: flex;
-  justify-content: flex-end;
-}

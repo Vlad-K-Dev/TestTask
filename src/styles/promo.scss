@@ -1,0 +1,120 @@
+@import "variables";
+@import "breakpoints";
+@import "mixins";
+
+@mixin promo {
+
+    .promo-block {
+      @include flex-column;
+      background: $form_inputs;
+      margin: 2.0625rem 0 0 0;
+    }
+
+    .promo-block__mac {
+      display: none;
+    }
+
+    .promo-block__wrapperContent {
+      @include flex-column;
+
+      .promo-block__title {
+        margin: 2.0625rem 0 0 0;
+        font-size: 3rem;
+        color: #4488bb;
+        text-align: center;
+      }
+
+      ol {
+        counter-reset: counter;
+        padding: 0;
+        position: relative;
+        align-self: center;
+      }
+
+      .promo-block__list:nth-last-child(-n + 5) {
+        padding-top: 1rem;
+        border-top: 1px dotted #aaaaaa;
+      }
+
+      .promo-block__list {
+        @include flex-row;
+        position: relative;
+        align-items: center;
+        margin: 16px 0 0 3.75rem;;
+        color: $text_color;
+        list-style: none;
+        font-size: 1.125rem;
+        font-weight: 600;
+
+      }
+      .promo-block__list:before {
+        @include promo__list_numbers;
+      }
+    }
+
+  @include mediaTablet{
+    .promo-block__mac {
+      display: none;
+    }
+
+    .promo-block__list{
+      width: 18.6rem;
+    }
+  }
+
+  @include mediaDesktop{
+    .promo-block {
+      width: 1200px;
+      @include flex-row;
+      margin: 4.6875rem 0 0 0;
+      background-color: #eee;
+      justify-content: space-evenly;
+      position: relative;;
+    }
+    .promo-block__mac {
+      display: block;
+      position: relative;
+      width: 29.6875rem;
+    }
+    .promo-block__Img {
+      width: 30.625rem;
+      position: absolute;
+      top: -2.5rem;
+    }
+    .promo-block__wrapperContent {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      text-align: left;
+    }
+    .promo-block__title {
+      margin: 2.0625rem 0 2.625rem 4rem;
+      font-size: 3rem;
+      color: #4488bb;
+      text-align: center;
+    }
+    ol {
+      display: flex;
+      flex-direction: column;
+      align-content: flex-start;
+      align-items: flex-start;
+      counter-reset: counter;
+      padding: 0;
+      margin: 0 0 5.5rem 0;
+      position: relative;
+    }
+    .promo-block__list:nth-last-child(-n + 5) {
+      padding-top: 1rem;
+    }
+    .promo-block__list {
+      flex: 0 0 auto;
+      position: relative;
+      padding: 0 0 1.3rem 0;
+      color: $text_color;
+      list-style: none;
+      font-size: 1rem;
+      font-weight: 600;
+
+    }
+  }
+}

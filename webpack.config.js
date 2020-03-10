@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
@@ -17,17 +18,29 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: './index.html'
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new ExtractTextPlugin('style.css')
     ],
     module: {
         rules: [
             {
-                test:  /\.css$/,
-                use:[
-                    'style-loader',
-                    'css-loader',
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: [
+                    /node_modules/
                 ]
+            },
+            {
+                test: /\.(sass|scss)$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
             }
         ]
     }
+
 };

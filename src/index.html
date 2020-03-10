@@ -4,6 +4,7 @@
     <meta name="viewport" content="initial-scale=1, minimum-scale=1, width=device-width">
     <link rel="stylesheet" href="styles/normolize.css">
     <link rel="stylesheet" href="styles/index.css">
+
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -21,7 +22,7 @@
 <div class="wrapper">
     <header class="head">
         <div class="head__textWrapper">
-            <h1 class="head__title" id="js-head_title">Banner head</h1>
+            <h1 class="head__title" id="js-head_title">Banner header</h1>
             <p class="head__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi similique necessitatibus fugit deleniti laboriosam aliquid consectetur temporibus? Similique nisi eaque ab repellendus, pariatur tempore excepturi earum.</p>
         </div>
             <div class="wrapper__form">
@@ -46,9 +47,10 @@
                         <option value="England">England</option>
                         <option value="Russia">Russia</option>
                     </select>
-                    <label for="checkbox">I agree with Terms & Conditions</label>
-                    <input type="checkbox" class="wrapper__form__input" id="checkbox" name="agree">
-
+                    <div class="input-checkbox">
+                        <input type="checkbox" class="wrapper__form__input" id="checkbox" name="agree">
+                        <label for="checkbox">I agree with Terms & Conditions</label>
+                    </div>
                     <div class="form_bottomBtn">
                         <input type="submit" value="submit" name="submit_btn" id="js-submit">
                         <span class="formHyperLink" id="js-hyperlink">hyperlink</span>
@@ -97,30 +99,23 @@
             <div class="promo-block__wrapperContent">
             <h2 class="promo-block__title">Title-text</h2>
             <ol class="promo-block__menu">
-                <li class="promo-block__list">Duis aute irure dolor<sup>1</sup> in reprehenderit in voluptate velit </li>
+                <li class="promo-block__list">Duis aute irure dolor<sup class="promo__supNumber">1</sup> in reprehenderit in voluptate velit </li>
                 <li class="promo-block__list">Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
                 <li class="promo-block__list">Ut enim ad minim veniam, quis nostrud exercitation</li>
                 <li class="promo-block__list">Et dolore magna aliqua.</li>
-                <li class="promo-block__list">Sed do eiusmod tempor<sup>2</sup> incididunt ut labore</li>
-                <li class="promo-block__list">Lorem ipsum dolor sit amet<sup>3</sup>, consectetur adipisicing elit.</li>
+                <li class="promo-block__list">Sed do eiusmod tempor<sup class="promo__supNumber">2</sup> incididunt ut labore</li>
+                <li class="promo-block__list">Lorem ipsum dolor sit amet<sup class="promo__supNumber">3</sup>, consectetur adipisicing elit.</li>
             </ol>
             </div>
         </section>
     </main>
-    <article>
-        <section class="disclamers">
-          <p>
-              <dl>
-                <dt>1</dt>
-                <dd>reprehederit - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam consequatur dolor, tenetur harum quaerat repellendus.</dd>
-                
-                <dt>2</dt>
-                <dd>Tempor - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt porro ducimus exercitationem consequatur. Fugit, vero?</dd>
-                
-                <dt>3</dt>
-                <dd>Amet - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, error. Laborum accusantium ipsum excepturi iste dignissimos!</dd>
-                
-            </dl>
+    <article class="description" >
+        <section class="description__section">
+          <ul class="description__list">
+            <li class="description__item"><sup>1</sup>Reprehederit - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam consequatur dolor, tenetur harum quaerat repellendus.</li>
+                <li class="description__item"><sup>2</sup>Tempor - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt porro ducimus exercitationem consequatur. Fugit, vero?</li>
+                <li class="description__item"><sup>3</sup>Amet - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, error. Laborum accusantium ipsum excepturi iste dignissimos!</li>
+          </ul>
         </section>
     </article>
 </div>

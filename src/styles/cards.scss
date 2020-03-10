@@ -1,0 +1,128 @@
+@import "variables";
+@import "breakpoints";
+@import "mixins";
+
+@mixin cards {
+
+    .cards {
+      @include flex-column;
+      align-items: center;
+      font-family: $font;
+    }
+
+    @include card_loop;
+    .card_wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(64, 115, 156, .5);
+    }
+
+    .card__title {
+      font-size: $card_title;
+      position: relative;
+      margin: 0.8125rem 0 0 1.5rem;
+      color: white;
+    }
+
+    .card__title::after {
+      content: url("../images/icon.png");
+      position: absolute;
+      right: 1.5rem;
+      cursor: pointer;
+    }
+
+    .card__text {
+      margin: 1.4375rem 0 1.25rem 1.25rem;
+      color: white;
+      font-size: 0.875rem;
+    }
+
+
+  @include mediaTablet {
+
+  }
+
+  @include mediaDesktop {
+    main {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include card_loop;
+
+    .cards {
+      width: 75rem;
+      @include flex-row;
+      justify-content: space-between;
+      margin-top: 4.6875rem;
+      font-family: $font;
+    }
+
+    @each $index in (1),
+            (2),
+            (3),
+            (4),
+            (5) {
+      .card-#{$index} {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-4, .card-5 {
+        flex-grow: 1;
+        margin: 1.5625rem 0 0 0;
+        width: 34.5rem;
+      }
+      .cards > .card-4 {
+        margin-right: .317rem;
+      }
+      .cards > .card-5 {
+        margin-left: .317rem;
+      }
+
+      .card_wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 74%;
+        background-color: rgba(64, 115, 156, .5);
+        color: #eee;
+      }
+
+      .card__title {
+        margin: 0.425rem 1.125rem;
+        position: relative;
+      }
+
+      .card__title::after {
+        content: url("../images/icon.png");
+        position: absolute;
+        right: 1rem;
+      }
+
+      .card__text {
+        margin: 0 0 1.125rem 1.125rem;
+        color: #eee;
+        font-size: 0.875rem;
+      }
+
+      .card-#{$index}:hover > .card_wrapper {
+        margin: 0;
+        transition: top .5s;
+        top: 0;
+      }
+
+      .card-#{$index}:not(:hover) > .card_wrapper {
+        transition: top .5s;
+        top: 74%;
+      }
+    }
+  }
+}
+
+
